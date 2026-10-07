@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# bases originales de INEGI (pesadas; se descargan con tarea_inegi/scripts/01_descargar_inegi.py)
+tarea_inegi/bases_de_datos_INEGI/**/*.zip
