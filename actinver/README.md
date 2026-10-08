@@ -6,6 +6,7 @@ Trabajo del Reto Actinver (5 de octubre al 13 de noviembre de 2026). Está separ
 - `datos/yahoo/`: precios, volumen, precios objetivo de analistas y fechas de reporte descargados de Yahoo Finance; covarianza del último año.
 - `resultados/Reto_Actinver_mejorado.xlsx`: el libro con precios actualizados y las hojas `Pronóstico`, `Órdenes` y `Portafolios`; `Mi portafolio` ya viene con el ganador.
 - `propuesta.md`: ganador, por qué, riesgos y cómo operar.
+- `bases_resumen.md`: reglas oficiales que afectan la operación y el Track del Inversionista.
 - `resultados/*.csv`: pronóstico por emisora, portafolios de 5 a 12 emisoras, pesos y órdenes.
 
 ```bash

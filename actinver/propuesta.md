@@ -48,4 +48,5 @@ Datos: Yahoo Finance al 8 de octubre de 2026 (~11:10 h CDMX) para precios, histo
 2. Primero MU y luego INTC, con orden limitada al precio de venta que ves.
 3. Después PINFRA, GFNORTE y BOLSA.
 4. No vuelvas a mover nada salvo que cambie algo importante: cada compra y venta cuesta.
-5. Confirma en las bases si el 50% máximo se revisa solo al comprar o todo el tiempo: si MU sube mucho, podría pasar de 50%.
+5. Según las bases, el 50% se revisa en cada compra: si MU sube después, no hay problema, pero no le compres más.
+6. Las órdenes no se pueden modificar; solo cancelar las no asignadas y volver a capturar. Reglas completas en `bases_resumen.md`.
