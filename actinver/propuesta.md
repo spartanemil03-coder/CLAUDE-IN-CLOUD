@@ -32,7 +32,7 @@ Datos: Yahoo Finance al 8 de octubre de 2026 (~11:10 h CDMX) para precios, histo
 
 1. **Se gana quedando en el top 3**, no en promedio. Lo que importa es la probabilidad de un resultado muy alto (+20%, lo que lograron los 3 primeros en una edición pasada). Eso pide concentrar en lo que más se mueve y tiene mejor pronóstico.
 2. **Pronóstico por acción** = beta × rendimiento esperado del mercado + alfa − costo de operar. El alfa combina dos señales reales: potencial al precio objetivo de analistas y momento de 12 meses. Se pondera con una capacidad de pronóstico baja (IC = 0.05), porque estas señales predicen poco.
-3. **MU** tiene el mejor pronóstico de las 145: 46 analistas con objetivo 49% arriba, el mayor momento y volatilidad de 81%. **INTC** es la segunda entre las líquidas: 78% de volatilidad, momento fuerte y reporta el 29 de octubre (más movimiento). Las otras 3 son de bajo riesgo y solo cumplen el mínimo de 5.
+3. **MU** tiene el mejor pronóstico de las 145: 46 analistas con objetivo 49% arriba, uno de los momentos más altos (+366% en 12 meses sin el último mes) y volatilidad de 81%. **INTC** es la segunda entre las líquidas: 78% de volatilidad, momento fuerte y reporta el 29 de octubre (más movimiento). Las otras 3 son de bajo riesgo y solo cumplen el mínimo de 5.
 4. **Se sostiene sin el pronóstico**: con IC = 0 sigue siendo el de mayor probabilidad de top 3 (12.6%), aunque su ganancia esperada baja a +$5,200.
 5. **Universo filtrado**: operables, spread de 1.5% o menos y líquidas. Quedaron fuera MARA, LCID y MFRISCO (tenían buen pronóstico, pero menos de $3,000 en el mejor nivel del monitor) y BYND/MRNA (spread o pronóstico negativo).
 
