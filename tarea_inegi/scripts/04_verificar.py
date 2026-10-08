@@ -15,7 +15,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import calculo_inegi as calc  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
-LIBRO = RAIZ / "resultados" / "T_Mortalidad_INEGI_Mexico_2019.xlsx"
+LIBRO = RAIZ / "resultados" / "2_Tabla_de_mortalidad_INEGI_2019.xlsx"
+PREP = RAIZ / "resultados" / "1_Preparacion_datos_INEGI_2019.xlsx"
 
 
 def comparar(wb, suaviza):
@@ -33,31 +34,43 @@ def comparar(wb, suaviza):
     return maxdif, t
 
 
+# libro 2: la tabla contra el cálculo independiente
 wb = load_workbook(LIBRO, data_only=True)
-assert wb["Tabla de mortalidad"]["L18"].value == 1, "el libro debe entregarse con el suavizado activado"
 maxdif, t = comparar(wb, True)
-# controles de las hojas de datos
-assert wb["Defunciones"]["I9"].value == 0, "total de defunciones por archivo ≠ total por edad"
+print(f"OK libro 2: tabla verificada contra el cálculo independiente (dif. relativa máx {maxdif:.2e}); control sum(dx) - radix = 0")
+# libro 1: controles de las hojas de datos y de la preparación
+wp = load_workbook(PREP, data_only=True)
+assert wp["Preparación"]["J5"].value == 1, "el libro 1 debe entregarse con el suavizado activado"
+assert wp["Defunciones"]["I9"].value == 0, "total de defunciones por archivo ≠ total por edad"
 dfn, nac, pob = calc.cargar()
-assert wb["Defunciones"]["E107"].value == dfn.values.sum()
-assert wb["Nacimientos"]["F8"].value == nac.sum()
-assert wb["Población"]["D107"].value == pob.values.sum() == 126_014_024
-assert [wb["Defunciones"].cell(5 + i, 5).value for i in range(101)] == list(dfn[["hombres", "mujeres", "sexo_no_especificado"]].iloc[:101].sum(axis=1))
-print(f"OK: libro verificado contra el cálculo independiente (dif. relativa máx {maxdif:.2e}); controles de datos en 0")
+assert wp["Defunciones"]["E107"].value == dfn.values.sum()
+assert wp["Nacimientos"]["F8"].value == nac.sum()
+assert wp["Población"]["D107"].value == pob.values.sum() == 126_014_024
+q, d, p, b = calc.qx("A", True)
+for col, ref in (("D", d), ("F", p), ("G", q)):
+    xl = np.array([wp["Preparación"][f"{col}{5 + i}"].value for i in range(101)], float)
+    assert np.max(np.abs(xl - ref) / np.maximum(1e-12, np.abs(ref))) < 1e-9, col
+# los insumos del libro 2 son iguales a las columnas D y F del libro 1
+wi = wb["Insumos"]
+for col, src in (("B", "D"), ("C", "F")):
+    a = np.array([wi[f"{col}{5 + i}"].value for i in range(101)], float)
+    b_ = np.array([wp["Preparación"][f"{src}{5 + i}"].value for i in range(101)], float)
+    assert np.max(np.abs(a - b_)) < 1e-6, col
+assert wi["F5"].value == wp["Nacimientos"]["F8"].value
+print("OK libro 1: controles de datos en 0; sus columnas D y F coinciden con la hoja Insumos del libro 2")
 
-# interruptor de suavizado: se apaga en una copia, se recalcula con LibreOffice y se compara con la referencia sin suavizar
+# interruptor de suavizado (libro 1): se apaga en una copia, se recalcula con LibreOffice y se compara con la referencia sin suavizar
 with tempfile.TemporaryDirectory() as tmp:
     copia = Path(tmp) / "prueba.xlsx"
-    w = load_workbook(LIBRO)
-    w["Tabla de mortalidad"]["L18"] = 0
+    w = load_workbook(PREP)
+    w["Preparación"]["J5"] = 0
     w.save(copia)
     skill = next(Path("/root/.claude/skills/synced").glob("*/xlsx/scripts/recalc.py"))
     subprocess.run([sys.executable, str(skill), str(copia), "300"], check=True, capture_output=True)
-    ws2 = load_workbook(copia, data_only=True)["Tabla de mortalidad"]
-    q0, *_ = calc.qx("A", False)
-    t0 = calc.tabla(q0)
-    dif = max(float(np.max(np.abs(np.array([ws2[f"{c}{5 + i}"].value for i in range(101)], float) - t0[k].values) / np.maximum(1, np.abs(t0[k].values))))
-              for c, k in zip("CDEFGH", ["qx", "lx", "dx", "Lx", "Tx", "ex"]))
-    assert dif < 1e-9
-    print(f"OK: con suavizado = 0 el libro coincide con la referencia sin suavizar (e0 = {ws2['H5'].value:.2f})")
+    w2 = load_workbook(copia, data_only=True)["Preparación"]
+    q0, d0, p0, _ = calc.qx("A", False)
+    for col, ref in (("D", d0), ("F", p0), ("G", q0)):
+        xl = np.array([w2[f"{col}{5 + i}"].value for i in range(101)], float)
+        assert np.max(np.abs(xl - ref) / np.maximum(1e-12, np.abs(ref))) < 1e-9, col
+    print(f"OK: con suavizado = 0 el libro 1 coincide con la referencia sin suavizar (e0 sin suavizar = {calc.tabla(q0).ex[0]:.2f})")
 print(f"México 2019, ambos sexos: e0 = {t.ex[0]:.2f}, e65 = {t.ex[65]:.2f}, q0 = {t.qx[0] * 1000:.2f} por mil, l65 = {t.lx[65] / 1e5:.3f}")

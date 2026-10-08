@@ -47,7 +47,7 @@ const hijos = [
   formula("q(100) = 1   (100 y más es el grupo abierto)"),
   formula("l0 = 100,000;   dx = lx · qx;   l(x+1) = lx − dx"),
   formula("Lx = l(x+1) + dx / 2;   Tx = suma de Lx desde x;   ex = Tx / lx"),
-  P("Dos ajustes a los datos, visibles en el Excel: (a) las defunciones con edad no especificada (0.5 %) se reparten entre las edades en proporción; (b) el Censo concentra población en edades redondas (a los 30 años hay 2.37 millones de personas y a los 31 solo 1.54 millones), lo que haría zigzaguear qx, así que de 10 a 97 años se usa una media móvil de 5 edades en defunciones y población (interruptor en la hoja de la tabla). El suavizado cambia e0 en 0.3 años. Como en la plantilla, dx y Lx se redondean a enteros.", { spacing: { before: 80, after: 120, line: 276 } }),
+  P("Dos ajustes a los datos, visibles en el libro de preparación: (a) las defunciones con edad no especificada (0.5 %) se reparten entre las edades en proporción; (b) el Censo concentra población en edades redondas (a los 30 años hay 2.37 millones de personas y a los 31 solo 1.54 millones), lo que haría zigzaguear qx, así que de 10 a 97 años se usa una media móvil de 5 edades en defunciones y población (interruptor en la hoja Preparación). El suavizado cambia e0 en 0.3 años. Como en la plantilla, dx y Lx se redondean a enteros.", { spacing: { before: 80, after: 120, line: 276 } }),
 
   H1("3. Resultados"),
   P(`La esperanza de vida al nacer es de ${f(D.e0)} años (hombres ${f(D.e0_h)}; mujeres ${f(D.e0_m)}) y a los 65 años les quedan ${f(D.e65)} años más. La mortalidad infantil es de ${f(D.q0_mil)} por mil. De cada 100,000 nacidos, ${n0(D.l65 * 1e5)} llegan a los 65 años y ${n0(D.l80 * 1e5)} a los 80.`),
@@ -80,7 +80,7 @@ const hijos = [
   bullet(`El Censo sobrestima la población de edades avanzadas: a partir de ~90 años qx se aplana y ${pct(D.l100)} de los nacidos llegaría a los 100 años, lo cual no es creíble. Con qx = 1 en el grupo abierto, e100 = 0.5 años.`),
   bullet("Las defunciones y los nacimientos son registros administrativos: pueden tener subregistro, y los nacimientos de 2019 se siguen registrando después de 2021, por lo que q(0) puede estar algo sobrestimada."),
   bullet("Defunciones de 2019 y población de marzo de 2020 no son del mismo momento; la diferencia es de unos meses de crecimiento de la población."),
-  P("Archivos: T_Mortalidad_INEGI_Mexico_2019.xlsx (tabla de la plantilla y hojas con los datos usados), los gráficos en PNG y las bases originales de INEGI en bases_de_datos_INEGI/.", { spacing: { before: 120 } }),
+  P("Archivos: 2_Tabla_de_mortalidad_INEGI_2019.xlsx (tabla de la plantilla e insumos) y 1_Preparacion_datos_INEGI_2019.xlsx (datos de INEGI y su preparación), los gráficos en PNG y las bases originales de INEGI en bases_de_datos_INEGI/.", { spacing: { before: 120 } }),
 ];
 
 const doc = new Document({ creator: "Tarea U2_P1", title: "Tabla de mortalidad de México, 2019 (INEGI)",

@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import calculo_inegi as calc  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
-LIBRO = RAIZ / "resultados" / "T_Mortalidad_INEGI_Mexico_2019.xlsx"
+LIBRO = RAIZ / "resultados" / "2_Tabla_de_mortalidad_INEGI_2019.xlsx"
 AZUL, NARANJA, GRIS = "#2a78d6", "#eb6834", "#9aa0a6"
 INK, INK2, GRID, BG = "#0b0b0b", "#52514e", "#e4e3df", "#fcfcfb"
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10, "axes.edgecolor": GRID, "axes.labelcolor": INK2,

@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import calculo_inegi as calc  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
-wb = load_workbook(RAIZ / "resultados" / "T_Mortalidad_INEGI_Mexico_2019.xlsx", data_only=True)
+wb = load_workbook(RAIZ / "resultados" / "2_Tabla_de_mortalidad_INEGI_2019.xlsx", data_only=True)
 ws = wb["Tabla de mortalidad"]
 T = {k: np.array([ws[f"{c}{5 + i}"].value for i in range(101)], float) for c, k in zip("BCDEFGH", ["x", "qx", "lx", "dx", "Lx", "Tx", "ex"])}
 q, l, d, e = T["qx"], T["lx"], T["dx"], T["ex"]

@@ -58,7 +58,9 @@ const hijos = [
 
   H1("5. Paso 3: dos ajustes a los datos"),
   P([b("Ajuste A: defunciones con edad no especificada. "), run(`${n0(D.ne)} defunciones (0.5 %) no tienen edad. Se reparten entre todas las edades en proporción a sus defunciones, multiplicando cada edad por un factor = total de defunciones / defunciones con edad = ${n0(D.def_total)} / ${n0(D.def_total - D.ne)} = ${f(D.factor, 4)}. Ejemplo: a la edad 0 había ${n0(D.d0_raw)} defunciones y quedan ${f(D.d0_aj, 1)}.`)]),
-  P([b("Ajuste B: suavizado del Censo (opcional). "), run(`En el Censo mucha gente declara una edad “redonda”: hay ${n0(D.p30)} personas de 30 años pero solo ${n0(D.p31)} de 31. Eso hace que qx suba y baje sin sentido (qx a los 30 años saldría ${D.q30_crudo.toFixed(5)} y a los 31 saldría ${D.q31_crudo.toFixed(5)}). Para corregirlo, de los 10 a los 97 años se reemplaza cada dato por el promedio de 5 edades (la edad y dos hacia cada lado), tanto en defunciones como en población. Con el suavizado: ${D.q30_suav.toFixed(5)} y ${D.q31_suav.toFixed(5)}. En el Excel se apaga poniendo 0 en la celda amarilla “Suavizado del Censo” (L18); sin suavizar, e0 sería ${f(D.e0_crudo)} en vez de ${f(D.e0)}.`)]),
+  P([b("Ajuste B: suavizado del Censo (opcional). "), run(`En el Censo mucha gente declara una edad “redonda”: hay ${n0(D.p30)} personas de 30 años pero solo ${n0(D.p31)} de 31. Eso hace que qx suba y baje sin sentido (qx a los 30 años saldría ${D.q30_crudo.toFixed(5)} y a los 31 saldría ${D.q31_crudo.toFixed(5)}). Para corregirlo, de los 10 a los 97 años se reemplaza cada dato por el promedio de 5 edades (la edad y dos hacia cada lado), tanto en defunciones como en población. Con el suavizado: ${D.q30_suav.toFixed(5)} y ${D.q31_suav.toFixed(5)}. En el libro 1 se apaga poniendo 0 en la celda amarilla J5 de la hoja Preparación; sin suavizar, e0 sería ${f(D.e0_crudo)} en vez de ${f(D.e0)}.`)]),
+
+  P([b("¿Qué dice esa fórmula larga de la hoja Preparación? "), run("=SI(Y(J5=1; edad>=10; edad<=97); PROMEDIO(las 5 celdas de alrededor); la celda tal cual). Se lee: “si el suavizado está encendido y la edad está entre 10 y 97, usa el promedio de esa edad y las dos de arriba y las dos de abajo; si no, deja el dato original”. Es la única fórmula con condición; todas las demás son sumas, productos o divisiones.")]),
 
   H1("6. Paso 4: calcular qx"),
   P("La probabilidad de morir se calcula así:"),
@@ -76,7 +78,7 @@ const hijos = [
   P("Por qué q(0) usa nacimientos: lo indica la nota técnica de la plantilla. Los que mueren antes de cumplir un año son del grupo de nacidos, y la población de “0 años” del Censo no representa bien a ese grupo."),
 
   H1("7. Paso 5: completar la tabla (lx, dx, Lx, Tx, ex)"),
-  P("Con la columna qx lista, el resto sale con las mismas fórmulas de la plantilla. En el Excel (hoja Tabla de mortalidad, fila 5 = edad 0):"),
+  P("Con la columna qx lista, el resto sale con las mismas fórmulas de la plantilla. En el libro 2 (hoja Tabla de mortalidad, fila 5 = edad 0):"),
   tabla(["Columna", "Qué significa", "Fórmula en Excel", "Ejemplo (edad 0 → 1)"], [1300, 2300, 2700, 3060], [
     ["lx (D)", "Sobrevivientes a la edad x", "D5 = 100000; D6 = D5 − E5", `${n0(100000)} → ${n0(D.l1)}`],
     ["dx (E)", "Defunciones entre x y x+1", "E5 = ROUND(D5*C5, 0)", `${n0(100000)} × ${f(D.q0, 6)} = ${n0(D.dx0)}`],
@@ -87,7 +89,7 @@ const hijos = [
   sp(),
   bullet("Los dx y Lx se redondean a enteros, igual que en la plantilla."),
   bullet("A los 100 años qx = 1, así que todos los que llegan mueren en esa fila; el último Lx es dx/2."),
-  bullet("Control: la suma de todos los dx debe ser igual al radix (100,000). El Excel lo comprueba en la celda L25 y da 0."),
+  bullet("Control: la suma de todos los dx debe ser igual al radix (100,000). El libro 2 lo comprueba en la celda L25 y da 0."),
   bullet("En la plantilla original los Tx estaban escritos a mano y varios eran sumas de lx en lugar de Lx; aquí todos son fórmulas."),
 
   H1("8. Resultados"),
@@ -106,19 +108,21 @@ const hijos = [
   bullet([b("Sobremortalidad masculina y comparación con CONAPO: "), run("complementos del análisis.")]),
 
   H1("10. Paso 7: cómo se verificó que está bien"),
-  bullet("Se recalculó toda la tabla por separado en Python y se comparó con el Excel: coinciden hasta el decimal 14."),
-  bullet("Los totales del Excel (defunciones, nacimientos, población) se comparan con los totales de los archivos originales: diferencia 0."),
-  bullet(`Se probó apagar el suavizado y recalcular: el Excel coincide también sin suavizar.`),
+  bullet("Se recalculó toda la tabla por separado en Python y se comparó con el libro 2: coinciden hasta el decimal 14."),
+  bullet("Los totales del libro 1 (defunciones, nacimientos, población) se comparan con los totales de los archivos originales: diferencia 0."),
+  bullet(`Se probó apagar el suavizado y recalcular: el libro 1 coincide también sin suavizar, y sus columnas D y F coinciden con la hoja Insumos del libro 2.`),
   bullet(`Referencia externa (no se usa en la tabla): la esperanza de vida oficial de CONAPO para 2019 es ${f(D.ref_a)} años; esta tabla da ${f(D.e0)}.`),
 
-  H1("11. Cómo está organizado el Excel"),
-  tabla(["Hoja", "Contenido"], [2600, 6760], [
-    ["Tabla de mortalidad", "La plantilla de la profesora completa (x de 0 a 100) con fórmulas, nota técnica y la celda amarilla del suavizado."],
-    ["Datos usados", "Para cada edad: defunciones, defunciones ajustadas, defunciones usadas, población, población usada y qx."],
-    ["Defunciones", "Conteo de defunciones ocurridas en 2019 por edad y sexo, y cuántas aportó cada archivo."],
-    ["Población", "Población del Censo 2020 por edad y sexo."],
-    ["Nacimientos", "Nacimientos de 2019 por sexo y por archivo."],
-    ["Fuentes", "Bases de INEGI usadas, qué campos y enlaces."],
+  H1("11. Cómo están organizados los dos Excel"),
+  P("El trabajo se separó en dos libros para que cada uno sea fácil de leer. Ninguno depende del otro (no hay vínculos entre archivos): el libro 2 trae pegados, como valores, los dos datos que salen del libro 1."),
+  tabla(["Libro / hoja", "Contenido"], [3100, 6260], [
+    ["2_Tabla_de_mortalidad: Tabla de mortalidad", "La plantilla de la profesora completa (x de 0 a 100) con fórmulas simples y la nota técnica. Es lo que se entrega como tabla."],
+    ["2_Tabla_de_mortalidad: Insumos", "Defunciones usadas y población usada por edad, y los nacimientos de 2019. La tabla calcula qx a partir de aquí."],
+    ["1_Preparacion_datos: Preparación", "Paso de los conteos de INEGI a defunciones y población usadas: redistribución de la edad no especificada, suavizado (celda J5) y qx."],
+    ["1_Preparacion_datos: Defunciones", "Conteo de defunciones ocurridas en 2019 por edad y sexo, y cuántas aportó cada archivo."],
+    ["1_Preparacion_datos: Población", "Población del Censo 2020 por edad y sexo."],
+    ["1_Preparacion_datos: Nacimientos", "Nacimientos de 2019 por sexo y por archivo."],
+    ["1_Preparacion_datos: Fuentes", "Bases de INEGI usadas, qué campos y enlaces."],
   ]),
 
   H1("12. Preguntas que puede hacer la maestra"),
@@ -130,7 +134,8 @@ const hijos = [
   P([b("¿Por qué a los 100 años llegan 3,536 de 100,000 (3.5 %)? "), run("Es un síntoma de la sobrestimación de la población de edades avanzadas en el Censo (a partir de ~90 años qx se aplana). Se señala como limitación.")]),
 
   H1("13. Archivos de la entrega"),
-  bullet([b("T_Mortalidad_INEGI_Mexico_2019.xlsx: "), run("la tabla (hoja 1) y los datos usados (demás hojas).")]),
+  bullet([b("2_Tabla_de_mortalidad_INEGI_2019.xlsx: "), run("la tabla de la plantilla y sus insumos.")]),
+  bullet([b("1_Preparacion_datos_INEGI_2019.xlsx: "), run("los datos de INEGI contados y su preparación.")]),
   bullet([b("Analisis_Tabla_Mortalidad_INEGI_2019.docx: "), run("método, resultados, gráficos y análisis.")]),
   bullet([b("Explicacion_paso_a_paso_INEGI_2019.docx: "), run("este documento.")]),
   bullet([b("Gráficos en PNG "), run("y, como respaldo, las bases originales de INEGI y el código en el repositorio de GitHub.")]),
