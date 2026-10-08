@@ -1,6 +1,6 @@
 """Reto Actinver 2026: lectura del Excel y cribado de las 145 acciones por costo de operar.
 
-Lee actinver/datos/Reto_Actinver_145_acciones.xlsx (hojas Acciones y Covarianza) y escribe en actinver/resultados/.
+Lee datos/Reto_Actinver_145_acciones.xlsx (hojas Acciones y Covarianza) y escribe en resultados/.
 Todo es descriptivo del pasado: no predice rendimientos. Los escenarios y portafolios están en 02_escenarios.py.
 """
 import warnings

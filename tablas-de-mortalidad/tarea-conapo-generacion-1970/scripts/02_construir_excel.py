@@ -1,4 +1,4 @@
-"""Construye el libro de Excel a partir de la plantilla de la profesora (tarea_conapo/plantilla_profesora).
+"""Construye el libro de Excel a partir de la plantilla de la profesora (plantilla_profesora/).
 
 Hoja 1 'Tabla de mortalidad': la plantilla, completada de 0 a 100 años con fórmulas vivas (generación mexicana de 1970,
 ambos sexos, datos de CONAPO). Hojas siguientes: los datos usados.

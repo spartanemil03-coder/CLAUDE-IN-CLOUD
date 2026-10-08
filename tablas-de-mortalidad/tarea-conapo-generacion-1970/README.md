@@ -8,6 +8,8 @@
 
 ## Reproducir
 
+Desde esta carpeta:
+
 ```bash
 python3 scripts/02_construir_excel.py     # construye el libro a partir de la plantilla y de las bases
 python3 <skill xlsx>/scripts/recalc.py resultados/T_Mortalidad_CONAPO_Generacion_1970.xlsx   # recalcula con LibreOffice

@@ -11,6 +11,8 @@
 
 ## Reproducir
 
+Desde esta carpeta:
+
 ```bash
 python3 scripts/01_descargar_inegi.py     # descarga las bases a bases_de_datos_INEGI/ (si no están) y condensa los conteos
 python3 scripts/02_construir_excel.py     # construye el libro a partir de la plantilla
