@@ -1,0 +1,16 @@
+portafolio,emisora,peso,precio_venta,titulos,importe
+A Prudente,GFNORTE O,0.2,189.55,1051,199217.05
+A Prudente,GMEXICO B,0.2,231.6,860,199176.0
+A Prudente,AC *,0.2,194.96,1022,199249.12
+A Prudente,FUNO 11,0.2,30.38,6563,199383.94
+A Prudente,MSFT *,0.2,9661.05,20,193221.0
+B Tu idea + diversificadores,NVDA *,0.3,4289.99,69,296009.31
+B Tu idea + diversificadores,GFNORTE O,0.2,189.55,1051,199217.05
+B Tu idea + diversificadores,GMEXICO B,0.2,231.6,860,199176.0
+B Tu idea + diversificadores,MSFT *,0.15,9661.05,15,144915.75
+B Tu idea + diversificadores,GOOGL *,0.15,6359.99,23,146279.77
+C Ranking (alto riesgo),NVDA *,0.4,4289.99,92,394679.08
+C Ranking (alto riesgo),TSLA *,0.2,6789.99,29,196909.71
+C Ranking (alto riesgo),AVGO *,0.15,6780.0,22,149160.0
+C Ranking (alto riesgo),GMEXICO B,0.15,231.6,645,149382.0
+C Ranking (alto riesgo),GFNORTE O,0.1,189.55,525,99513.75

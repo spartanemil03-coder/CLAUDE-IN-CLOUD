@@ -1,0 +1,4 @@
+portafolio,emisoras,vol_anual,mov_1sigma_pct,mov_1sigma_mxn,costo_estimado_mxn,costo_pct,beta_vs_IPC,P_ganar_algo,P_ganar_100k,P_ganar_200k,P_perder_100k
+A Prudente,"GFNORTE O 20%, GMEXICO B 20%, AC * 20%, FUNO 11 20%, MSFT * 20%",0.177,0.0558,55751.541,2894.3349,0.0029,0.8676,0.4793,0.0325,0.0001,0.0408
+B Tu idea + diversificadores,"NVDA * 30%, GFNORTE O 20%, GMEXICO B 20%, MSFT * 15%, GOOGL * 15%",0.214,0.0674,67416.175,4241.3627,0.0042,0.7825,0.4749,0.061,0.0012,0.0777
+C Ranking (alto riesgo),"NVDA * 40%, TSLA * 20%, AVGO * 15%, GMEXICO B 15%, GFNORTE O 10%",0.2908,0.0916,91600.6504,5085.8276,0.0051,0.8666,0.4779,0.1256,0.0126,0.1501

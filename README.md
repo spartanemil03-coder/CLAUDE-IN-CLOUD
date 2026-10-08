@@ -20,3 +20,7 @@ python3 scripts/05_informe.py                  # informe Word (requiere node y e
 ```
 
 Requiere `pandas`, `openpyxl`, `matplotlib` y LibreOffice (para recalcular las fórmulas).
+
+## Otros proyectos
+
+- `actinver/`: Reto Actinver 2026 (cribado de 145 acciones y portafolios candidatos). Independiente del trabajo de mortalidad.
