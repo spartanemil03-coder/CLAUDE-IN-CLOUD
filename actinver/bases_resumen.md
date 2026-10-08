@@ -42,3 +42,11 @@ Fuente: [Bases y mecánica](https://www.retoactinver.com/es-MX/bases-y-mecanica)
 | 5 | 3 al 7 nov | Al menos una operación |
 
 Para no mover el portafolio ganador, estas compras se hacen por el monto mínimo con el efectivo sobrante.
+
+## Los 56 ETFs del simulador (monitor del 8 de octubre de 2026)
+
+**No comprar (apalancados o inversos, 16):** ANGELD 10, DIABLOI 10, FAS, FAZ, PSQ, QLD, SOXL, SOXS, SPXL, SPXS, SQQQ, TECL, TECS, TNA, TQQQ, TZA. PSQ es inverso sin apalancamiento; se excluye por precaución. ANGELD y DIABLOI son los más baratos: confirmar en "Detalle" que son apalancados antes de descartarlos del todo, pero no comprarlos.
+
+**Permitidos (40):** AAXJ, ACWI, BIL, BOTZ, DIA, EEM, EWZ, GDX, GLD, IAU, ICLN, INDA, IVV, KWEB, LIT, MCHI, NAFTRAC ISHRS, QCLN, QQQ, SHV, SHY, SLV, SOXX, SPY, SPYM, TAN, TLT, USO, VEA, VGT, VNQ, VOO, VT, VTI, VWO, VYM, XLE, XLF, XLK, XLV. TAN y USO no tenían posturas ese día.
+
+**Para el Track 3 (20 al 24 de octubre):** 1 título de **NAFTRAC ISHRS** (~$65, replica al IPC, 240,000 títulos a la venta).
