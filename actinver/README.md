@@ -14,6 +14,7 @@ python3 actinver/scripts/00_actualizar_datos.py   # descarga de Yahoo Finance (r
 python3 -I actinver/scripts/01_analisis.py        # cribado por costo de operar
 python3 actinver/scripts/02_pronostico.py         # pronóstico, optimización de 5 a 12 emisoras y ganador (requiere scipy)
 python3 actinver/scripts/03_construir_excel.py    # actualiza el Excel
+python3 actinver/scripts/04_con_etfs.py           # repite el ganador con los 40 ETFs permitidos (resultados/con_etfs_*.csv)
 python3 <skill xlsx>/scripts/recalc.py actinver/resultados/Reto_Actinver_mejorado.xlsx   # recalcula con LibreOffice
 ```
 
