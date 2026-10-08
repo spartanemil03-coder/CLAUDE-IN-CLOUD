@@ -1,0 +1,142 @@
+portafolio,objetivo,n,emisora,peso
+Ganar (máx. prob. top 3) · 5 emisoras,Ganar (máx. prob. top 3),5,PINFRA *,0.03
+Ganar (máx. prob. top 3) · 5 emisoras,Ganar (máx. prob. top 3),5,BOLSA A,0.03
+Ganar (máx. prob. top 3) · 5 emisoras,Ganar (máx. prob. top 3),5,GFNORTE O,0.03
+Ganar (máx. prob. top 3) · 5 emisoras,Ganar (máx. prob. top 3),5,INTC *,0.41
+Ganar (máx. prob. top 3) · 5 emisoras,Ganar (máx. prob. top 3),5,MU *,0.5
+Ganar (máx. prob. top 3) · 6 emisoras,Ganar (máx. prob. top 3),6,AVGO *,0.03
+Ganar (máx. prob. top 3) · 6 emisoras,Ganar (máx. prob. top 3),6,PINFRA *,0.03
+Ganar (máx. prob. top 3) · 6 emisoras,Ganar (máx. prob. top 3),6,BOLSA A,0.03
+Ganar (máx. prob. top 3) · 6 emisoras,Ganar (máx. prob. top 3),6,GFNORTE O,0.03
+Ganar (máx. prob. top 3) · 6 emisoras,Ganar (máx. prob. top 3),6,INTC *,0.38
+Ganar (máx. prob. top 3) · 6 emisoras,Ganar (máx. prob. top 3),6,MU *,0.5
+Ganar (máx. prob. top 3) · 7 emisoras,Ganar (máx. prob. top 3),7,GOOGL *,0.03
+Ganar (máx. prob. top 3) · 7 emisoras,Ganar (máx. prob. top 3),7,AVGO *,0.03
+Ganar (máx. prob. top 3) · 7 emisoras,Ganar (máx. prob. top 3),7,PINFRA *,0.03
+Ganar (máx. prob. top 3) · 7 emisoras,Ganar (máx. prob. top 3),7,BOLSA A,0.03
+Ganar (máx. prob. top 3) · 7 emisoras,Ganar (máx. prob. top 3),7,GFNORTE O,0.03
+Ganar (máx. prob. top 3) · 7 emisoras,Ganar (máx. prob. top 3),7,INTC *,0.35
+Ganar (máx. prob. top 3) · 7 emisoras,Ganar (máx. prob. top 3),7,MU *,0.5
+Ganar (máx. prob. top 3) · 8 emisoras,Ganar (máx. prob. top 3),8,LAB B,0.03
+Ganar (máx. prob. top 3) · 8 emisoras,Ganar (máx. prob. top 3),8,GOOGL *,0.03
+Ganar (máx. prob. top 3) · 8 emisoras,Ganar (máx. prob. top 3),8,AVGO *,0.03
+Ganar (máx. prob. top 3) · 8 emisoras,Ganar (máx. prob. top 3),8,PINFRA *,0.03
+Ganar (máx. prob. top 3) · 8 emisoras,Ganar (máx. prob. top 3),8,BOLSA A,0.03
+Ganar (máx. prob. top 3) · 8 emisoras,Ganar (máx. prob. top 3),8,GFNORTE O,0.03
+Ganar (máx. prob. top 3) · 8 emisoras,Ganar (máx. prob. top 3),8,INTC *,0.32
+Ganar (máx. prob. top 3) · 8 emisoras,Ganar (máx. prob. top 3),8,MU *,0.5
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,R A,0.03
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,LAB B,0.03
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,GOOGL *,0.03
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,AVGO *,0.03
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,PINFRA *,0.03
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,BOLSA A,0.03
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,GFNORTE O,0.03
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,INTC *,0.29
+Ganar (máx. prob. top 3) · 9 emisoras,Ganar (máx. prob. top 3),9,MU *,0.5
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,GCC *,0.03
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,R A,0.03
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,LAB B,0.03
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,GOOGL *,0.03
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,AVGO *,0.03
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,PINFRA *,0.03
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,BOLSA A,0.03
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,GFNORTE O,0.03
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,INTC *,0.26
+Ganar (máx. prob. top 3) · 10 emisoras,Ganar (máx. prob. top 3),10,MU *,0.5
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,BBAJIO O,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,GCC *,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,R A,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,LAB B,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,GOOGL *,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,AVGO *,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,PINFRA *,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,BOLSA A,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,GFNORTE O,0.03
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,INTC *,0.23
+Ganar (máx. prob. top 3) · 11 emisoras,Ganar (máx. prob. top 3),11,MU *,0.5
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,ORBIA *,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,BBAJIO O,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,GCC *,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,R A,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,LAB B,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,GOOGL *,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,AVGO *,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,PINFRA *,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,BOLSA A,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,GFNORTE O,0.03
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,INTC *,0.2
+Ganar (máx. prob. top 3) · 12 emisoras,Ganar (máx. prob. top 3),12,MU *,0.5
+Balanceado (ganancia/riesgo) · 5 emisoras,Balanceado (ganancia/riesgo),5,BABA N,0.086
+Balanceado (ganancia/riesgo) · 5 emisoras,Balanceado (ganancia/riesgo),5,GCC *,0.167
+Balanceado (ganancia/riesgo) · 5 emisoras,Balanceado (ganancia/riesgo),5,CEMEX CPO,0.227
+Balanceado (ganancia/riesgo) · 5 emisoras,Balanceado (ganancia/riesgo),5,LAB B,0.237
+Balanceado (ganancia/riesgo) · 5 emisoras,Balanceado (ganancia/riesgo),5,MU *,0.283
+Balanceado (ganancia/riesgo) · 6 emisoras,Balanceado (ganancia/riesgo),6,GENTERA *,0.055
+Balanceado (ganancia/riesgo) · 6 emisoras,Balanceado (ganancia/riesgo),6,BABA N,0.08
+Balanceado (ganancia/riesgo) · 6 emisoras,Balanceado (ganancia/riesgo),6,GCC *,0.153
+Balanceado (ganancia/riesgo) · 6 emisoras,Balanceado (ganancia/riesgo),6,CEMEX CPO,0.213
+Balanceado (ganancia/riesgo) · 6 emisoras,Balanceado (ganancia/riesgo),6,LAB B,0.222
+Balanceado (ganancia/riesgo) · 6 emisoras,Balanceado (ganancia/riesgo),6,MU *,0.277
+Balanceado (ganancia/riesgo) · 7 emisoras,Balanceado (ganancia/riesgo),7,GOOGL *,0.03
+Balanceado (ganancia/riesgo) · 7 emisoras,Balanceado (ganancia/riesgo),7,GENTERA *,0.053
+Balanceado (ganancia/riesgo) · 7 emisoras,Balanceado (ganancia/riesgo),7,BABA N,0.071
+Balanceado (ganancia/riesgo) · 7 emisoras,Balanceado (ganancia/riesgo),7,GCC *,0.153
+Balanceado (ganancia/riesgo) · 7 emisoras,Balanceado (ganancia/riesgo),7,CEMEX CPO,0.207
+Balanceado (ganancia/riesgo) · 7 emisoras,Balanceado (ganancia/riesgo),7,LAB B,0.214
+Balanceado (ganancia/riesgo) · 7 emisoras,Balanceado (ganancia/riesgo),7,MU *,0.272
+Balanceado (ganancia/riesgo) · 8 emisoras,Balanceado (ganancia/riesgo),8,SIGMAF A,0.03
+Balanceado (ganancia/riesgo) · 8 emisoras,Balanceado (ganancia/riesgo),8,GOOGL *,0.03
+Balanceado (ganancia/riesgo) · 8 emisoras,Balanceado (ganancia/riesgo),8,GENTERA *,0.05
+Balanceado (ganancia/riesgo) · 8 emisoras,Balanceado (ganancia/riesgo),8,BABA N,0.069
+Balanceado (ganancia/riesgo) · 8 emisoras,Balanceado (ganancia/riesgo),8,GCC *,0.145
+Balanceado (ganancia/riesgo) · 8 emisoras,Balanceado (ganancia/riesgo),8,CEMEX CPO,0.2
+Balanceado (ganancia/riesgo) · 8 emisoras,Balanceado (ganancia/riesgo),8,LAB B,0.209
+Balanceado (ganancia/riesgo) · 8 emisoras,Balanceado (ganancia/riesgo),8,MU *,0.267
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,GRUMA B,0.03
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,SIGMAF A,0.03
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,GOOGL *,0.03
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,GENTERA *,0.047
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,BABA N,0.067
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,GCC *,0.14
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,CEMEX CPO,0.194
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,LAB B,0.2
+Balanceado (ganancia/riesgo) · 9 emisoras,Balanceado (ganancia/riesgo),9,MU *,0.262
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,AC *,0.03
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,GRUMA B,0.03
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,SIGMAF A,0.03
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,GOOGL *,0.03
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,GENTERA *,0.043
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,BABA N,0.065
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,GCC *,0.133
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,CEMEX CPO,0.184
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,LAB B,0.194
+Balanceado (ganancia/riesgo) · 10 emisoras,Balanceado (ganancia/riesgo),10,MU *,0.261
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,ORBIA *,0.03
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,AC *,0.03
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,GRUMA B,0.03
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,SIGMAF A,0.03
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,GOOGL *,0.03
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,GENTERA *,0.039
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,BABA N,0.062
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,GCC *,0.124
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,CEMEX CPO,0.178
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,LAB B,0.189
+Balanceado (ganancia/riesgo) · 11 emisoras,Balanceado (ganancia/riesgo),11,MU *,0.258
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,CHDRAUI B,0.03
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,ORBIA *,0.03
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,AC *,0.03
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,GRUMA B,0.03
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,SIGMAF A,0.03
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,GOOGL *,0.03
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,GENTERA *,0.034
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,BABA N,0.06
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,GCC *,0.114
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,CEMEX CPO,0.172
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,LAB B,0.182
+Balanceado (ganancia/riesgo) · 12 emisoras,Balanceado (ganancia/riesgo),12,MU *,0.258
+Tu idea (NVDA + Banorte),Referencia,5,NVDA *,0.3
+Tu idea (NVDA + Banorte),Referencia,5,GFNORTE O,0.2
+Tu idea (NVDA + Banorte),Referencia,5,GMEXICO B,0.2
+Tu idea (NVDA + Banorte),Referencia,5,MSFT *,0.15
+Tu idea (NVDA + Banorte),Referencia,5,GOOGL *,0.15
