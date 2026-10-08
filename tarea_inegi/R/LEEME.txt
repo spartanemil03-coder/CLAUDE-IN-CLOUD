@@ -1,0 +1,31 @@
+TABLA DE MORTALIDAD DE MEXICO 2019 CON DATOS DE INEGI, EN R
+
+Contenido de esta carpeta
+  tabla_mortalidad_INEGI.R   el codigo
+  datos/                     los tres CSV de INEGI ya condensados (defunciones EDR, nacimientos ENR, Censo 2020)
+
+Como correrlo (RStudio)
+  1. Descomprime TODO en una carpeta (el .R y la carpeta "datos" deben quedar juntos).
+  2. Abre tabla_mortalidad_INEGI.R en RStudio.
+     Si ves letras raras en los acentos: File > Reopen with Encoding > UTF-8.
+  3. Session > Set Working Directory > To Source File Location.
+  4. Pulsa Source (Ctrl+Shift+S).
+  Si falta algun paquete, R te lo avisa: install.packages("openxlsx") y install.packages("jsonlite").
+
+Que hace
+  - Calcula qx, lx, dx, Lx, Tx, ex (formato de la plantilla de la profesora) y px.
+  - Agrega la tabla de conmutacion al 5 % (Dx y Nx), como en tu codigo TMM_64_67.R.
+  - EXPORTA a la carpeta "salida" (se crea sola, junto al .R; puedes cambiarla en la linea carpeta_salida):
+      tabla_mortalidad_INEGI_2019.xlsx         (hoja de la tabla + hoja con los datos usados)
+      tabla_mortalidad_INEGI_2019.csv          (separador coma, punto decimal)
+      tabla_mortalidad_INEGI_2019_excel_es.csv (para abrir directo en Excel en espanol)
+      graficos_tabla_mortalidad.png            (lx, qx, dx, ex)
+  - Seccion 7: consulta el API de INEGI y compara la poblacion total del Censo 2020.
+
+Resultado esperado
+  e0 = 75.99 | e65 = 18.74 | q(0) = 0.012424 | suma de dx = 100000
+  API INEGI, poblacion total 2020: 126,014,024 -> COINCIDEN
+
+Nota sobre tu codigo original (TMM_64_67.R)
+  La linea 13 ("//////// haciendo tabla al 5%") no es un comentario valido en R y da error; los comentarios llevan #.
+  Las 44 lineas sum(Dx[i:85]) se reemplazan por una sola: Nx <- rev(cumsum(rev(Dx))).
