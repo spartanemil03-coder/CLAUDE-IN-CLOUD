@@ -1,28 +1,142 @@
-portafolio,emisora,peso,precio_venta,titulos,importe
-A Prudente,GFNORTE O,0.2,189.55,1051,199217.05
-A Prudente,GMEXICO B,0.2,231.6,860,199176.0
-A Prudente,AC *,0.2,194.96,1022,199249.12
-A Prudente,FUNO 11,0.2,30.38,6563,199383.94
-A Prudente,MSFT *,0.2,9661.05,20,193221.0
-B Tu idea + diversificadores,NVDA *,0.3,4289.99,69,296009.31
-B Tu idea + diversificadores,GFNORTE O,0.2,189.55,1051,199217.05
-B Tu idea + diversificadores,GMEXICO B,0.2,231.6,860,199176.0
-B Tu idea + diversificadores,MSFT *,0.15,9661.05,15,144915.75
-B Tu idea + diversificadores,GOOGL *,0.15,6359.99,23,146279.77
-C Ranking (alto riesgo),NVDA *,0.4,4289.99,92,394679.08
-C Ranking (alto riesgo),TSLA *,0.2,6789.99,29,196909.71
-C Ranking (alto riesgo),AVGO *,0.15,6780.0,22,149160.0
-C Ranking (alto riesgo),GMEXICO B,0.15,231.6,645,149382.0
-C Ranking (alto riesgo),GFNORTE O,0.1,189.55,525,99513.75
-D Optimizado: ganancia/riesgo,OMA B,0.15,202.15,739,149388.85
-D Optimizado: ganancia/riesgo,GOOGL *,0.15,6359.99,23,146279.77
-D Optimizado: ganancia/riesgo,CEMEX CPO,0.15,17.35,8619,149539.65
-D Optimizado: ganancia/riesgo,GMEXICO B,0.15,231.6,645,149382.0
-D Optimizado: ganancia/riesgo,TSLA *,0.15,6789.99,22,149379.78
-D Optimizado: ganancia/riesgo,AVGO *,0.15,6780.0,22,149160.0
-D Optimizado: ganancia/riesgo,GFNORTE O,0.1,189.55,525,99513.75
-E Optimizado: ganancia máx.,GOOGL *,0.2,6359.99,31,197159.69
-E Optimizado: ganancia máx.,CEMEX CPO,0.2,17.35,11492,199386.2
-E Optimizado: ganancia máx.,GMEXICO B,0.2,231.6,860,199176.0
-E Optimizado: ganancia máx.,TSLA *,0.2,6789.99,29,196909.71
-E Optimizado: ganancia máx.,AVGO *,0.2,6780.0,29,196620.0
+portafolio,emisora,peso,precio_venta_monitor,titulos,importe,comision_iva,prox_reporte
+Ganar (máx. prob. top 3) · 5 emisoras,PINFRA *,0.03,274.13,109,29880.17,34.66,2026-10-22
+Ganar (máx. prob. top 3) · 5 emisoras,BOLSA A,0.03,35.25,848,29892.0,34.67,2026-10-20
+Ganar (máx. prob. top 3) · 5 emisoras,GFNORTE O,0.03,189.55,157,29759.35,34.52,2026-11-03
+Ganar (máx. prob. top 3) · 5 emisoras,INTC *,0.41,1999.99,204,407997.96,473.28,2026-10-29
+Ganar (máx. prob. top 3) · 5 emisoras,MU *,0.5,19524.99,25,488124.75,566.22,2026-12-23
+Ganar (máx. prob. top 3) · 6 emisoras,AVGO *,0.03,6780.0,4,27120.0,31.46,2026-12-09
+Ganar (máx. prob. top 3) · 6 emisoras,PINFRA *,0.03,274.13,109,29880.17,34.66,2026-10-22
+Ganar (máx. prob. top 3) · 6 emisoras,BOLSA A,0.03,35.25,848,29892.0,34.67,2026-10-20
+Ganar (máx. prob. top 3) · 6 emisoras,GFNORTE O,0.03,189.55,157,29759.35,34.52,2026-11-03
+Ganar (máx. prob. top 3) · 6 emisoras,INTC *,0.38,1999.99,189,377998.11,438.48,2026-10-29
+Ganar (máx. prob. top 3) · 6 emisoras,MU *,0.5,19524.99,25,488124.75,566.22,2026-12-23
+Ganar (máx. prob. top 3) · 7 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Ganar (máx. prob. top 3) · 7 emisoras,AVGO *,0.03,6780.0,4,27120.0,31.46,2026-12-09
+Ganar (máx. prob. top 3) · 7 emisoras,PINFRA *,0.03,274.13,109,29880.17,34.66,2026-10-22
+Ganar (máx. prob. top 3) · 7 emisoras,BOLSA A,0.03,35.25,848,29892.0,34.67,2026-10-20
+Ganar (máx. prob. top 3) · 7 emisoras,GFNORTE O,0.03,189.55,157,29759.35,34.52,2026-11-03
+Ganar (máx. prob. top 3) · 7 emisoras,INTC *,0.35,1999.99,174,347998.26,403.68,2026-10-29
+Ganar (máx. prob. top 3) · 7 emisoras,MU *,0.5,19524.99,25,488124.75,566.22,2026-12-23
+Ganar (máx. prob. top 3) · 8 emisoras,LAB B,0.03,12.75,2345,29898.75,34.68,2026-10-21
+Ganar (máx. prob. top 3) · 8 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Ganar (máx. prob. top 3) · 8 emisoras,AVGO *,0.03,6780.0,4,27120.0,31.46,2026-12-09
+Ganar (máx. prob. top 3) · 8 emisoras,PINFRA *,0.03,274.13,109,29880.17,34.66,2026-10-22
+Ganar (máx. prob. top 3) · 8 emisoras,BOLSA A,0.03,35.25,848,29892.0,34.67,2026-10-20
+Ganar (máx. prob. top 3) · 8 emisoras,GFNORTE O,0.03,189.55,157,29759.35,34.52,2026-11-03
+Ganar (máx. prob. top 3) · 8 emisoras,INTC *,0.32,1999.99,159,317998.41,368.88,2026-10-29
+Ganar (máx. prob. top 3) · 8 emisoras,MU *,0.5,19524.99,25,488124.75,566.22,2026-12-23
+Ganar (máx. prob. top 3) · 9 emisoras,R A,0.03,139.21,214,29790.94,34.56,2026-10-26
+Ganar (máx. prob. top 3) · 9 emisoras,LAB B,0.03,12.75,2345,29898.75,34.68,2026-10-21
+Ganar (máx. prob. top 3) · 9 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Ganar (máx. prob. top 3) · 9 emisoras,AVGO *,0.03,6780.0,4,27120.0,31.46,2026-12-09
+Ganar (máx. prob. top 3) · 9 emisoras,PINFRA *,0.03,274.13,109,29880.17,34.66,2026-10-22
+Ganar (máx. prob. top 3) · 9 emisoras,BOLSA A,0.03,35.25,848,29892.0,34.67,2026-10-20
+Ganar (máx. prob. top 3) · 9 emisoras,GFNORTE O,0.03,189.55,157,29759.35,34.52,2026-11-03
+Ganar (máx. prob. top 3) · 9 emisoras,INTC *,0.29,1999.99,144,287998.56,334.08,2026-10-29
+Ganar (máx. prob. top 3) · 9 emisoras,MU *,0.5,19524.99,25,488124.75,566.22,2026-12-23
+Ganar (máx. prob. top 3) · 10 emisoras,GCC *,0.03,175.26,170,29794.2,34.56,2026-10-27
+Ganar (máx. prob. top 3) · 10 emisoras,R A,0.03,139.21,214,29790.94,34.56,2026-10-26
+Ganar (máx. prob. top 3) · 10 emisoras,LAB B,0.03,12.75,2345,29898.75,34.68,2026-10-21
+Ganar (máx. prob. top 3) · 10 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Ganar (máx. prob. top 3) · 10 emisoras,AVGO *,0.03,6780.0,4,27120.0,31.46,2026-12-09
+Ganar (máx. prob. top 3) · 10 emisoras,PINFRA *,0.03,274.13,109,29880.17,34.66,2026-10-22
+Ganar (máx. prob. top 3) · 10 emisoras,BOLSA A,0.03,35.25,848,29892.0,34.67,2026-10-20
+Ganar (máx. prob. top 3) · 10 emisoras,GFNORTE O,0.03,189.55,157,29759.35,34.52,2026-11-03
+Ganar (máx. prob. top 3) · 10 emisoras,INTC *,0.26,1999.99,129,257998.71,299.28,2026-10-29
+Ganar (máx. prob. top 3) · 10 emisoras,MU *,0.5,19524.99,25,488124.75,566.22,2026-12-23
+Ganar (máx. prob. top 3) · 11 emisoras,BBAJIO O,0.03,57.81,517,29887.77,34.67,2026-10-26
+Ganar (máx. prob. top 3) · 11 emisoras,GCC *,0.03,175.26,170,29794.2,34.56,2026-10-27
+Ganar (máx. prob. top 3) · 11 emisoras,R A,0.03,139.21,214,29790.94,34.56,2026-10-26
+Ganar (máx. prob. top 3) · 11 emisoras,LAB B,0.03,12.75,2345,29898.75,34.68,2026-10-21
+Ganar (máx. prob. top 3) · 11 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Ganar (máx. prob. top 3) · 11 emisoras,AVGO *,0.03,6780.0,4,27120.0,31.46,2026-12-09
+Ganar (máx. prob. top 3) · 11 emisoras,PINFRA *,0.03,274.13,109,29880.17,34.66,2026-10-22
+Ganar (máx. prob. top 3) · 11 emisoras,BOLSA A,0.03,35.25,848,29892.0,34.67,2026-10-20
+Ganar (máx. prob. top 3) · 11 emisoras,GFNORTE O,0.03,189.55,157,29759.35,34.52,2026-11-03
+Ganar (máx. prob. top 3) · 11 emisoras,INTC *,0.23,1999.99,114,227998.86,264.48,2026-10-29
+Ganar (máx. prob. top 3) · 11 emisoras,MU *,0.5,19524.99,25,488124.75,566.22,2026-12-23
+Ganar (máx. prob. top 3) · 12 emisoras,ORBIA *,0.03,21.66,1380,29890.8,34.67,2026-10-27
+Ganar (máx. prob. top 3) · 12 emisoras,BBAJIO O,0.03,57.81,517,29887.77,34.67,2026-10-26
+Ganar (máx. prob. top 3) · 12 emisoras,GCC *,0.03,175.26,170,29794.2,34.56,2026-10-27
+Ganar (máx. prob. top 3) · 12 emisoras,R A,0.03,139.21,214,29790.94,34.56,2026-10-26
+Ganar (máx. prob. top 3) · 12 emisoras,LAB B,0.03,12.75,2345,29898.75,34.68,2026-10-21
+Ganar (máx. prob. top 3) · 12 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Ganar (máx. prob. top 3) · 12 emisoras,AVGO *,0.03,6780.0,4,27120.0,31.46,2026-12-09
+Ganar (máx. prob. top 3) · 12 emisoras,PINFRA *,0.03,274.13,109,29880.17,34.66,2026-10-22
+Ganar (máx. prob. top 3) · 12 emisoras,BOLSA A,0.03,35.25,848,29892.0,34.67,2026-10-20
+Ganar (máx. prob. top 3) · 12 emisoras,GFNORTE O,0.03,189.55,157,29759.35,34.52,2026-11-03
+Ganar (máx. prob. top 3) · 12 emisoras,INTC *,0.2,1999.99,99,197999.01,229.68,2026-10-29
+Ganar (máx. prob. top 3) · 12 emisoras,MU *,0.5,19524.99,25,488124.75,566.22,2026-12-23
+Balanceado (ganancia/riesgo) · 5 emisoras,BABA N,0.086,1921.64,44,84552.16,98.08,2026-11-24
+Balanceado (ganancia/riesgo) · 5 emisoras,GCC *,0.167,175.26,950,166497.0,193.14,2026-10-27
+Balanceado (ganancia/riesgo) · 5 emisoras,CEMEX CPO,0.227,17.35,13044,226313.4,262.52,2026-10-26
+Balanceado (ganancia/riesgo) · 5 emisoras,LAB B,0.237,12.75,18532,236283.0,274.09,2026-10-21
+Balanceado (ganancia/riesgo) · 5 emisoras,MU *,0.283,19524.99,14,273349.86,317.09,2026-12-23
+Balanceado (ganancia/riesgo) · 6 emisoras,GENTERA *,0.055,36.36,1508,54830.88,63.6,2026-10-21
+Balanceado (ganancia/riesgo) · 6 emisoras,BABA N,0.08,1921.64,41,78787.24,91.39,2026-11-24
+Balanceado (ganancia/riesgo) · 6 emisoras,GCC *,0.153,175.26,870,152476.2,176.87,2026-10-27
+Balanceado (ganancia/riesgo) · 6 emisoras,CEMEX CPO,0.213,17.35,12239,212346.65,246.32,2026-10-26
+Balanceado (ganancia/riesgo) · 6 emisoras,LAB B,0.222,12.75,17359,221327.25,256.74,2026-10-21
+Balanceado (ganancia/riesgo) · 6 emisoras,MU *,0.277,19524.99,14,273349.86,317.09,2026-12-23
+Balanceado (ganancia/riesgo) · 7 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Balanceado (ganancia/riesgo) · 7 emisoras,GENTERA *,0.053,36.36,1453,52831.08,61.28,2026-10-21
+Balanceado (ganancia/riesgo) · 7 emisoras,BABA N,0.071,1921.64,36,69179.04,80.25,2026-11-24
+Balanceado (ganancia/riesgo) · 7 emisoras,GCC *,0.153,175.26,870,152476.2,176.87,2026-10-27
+Balanceado (ganancia/riesgo) · 7 emisoras,CEMEX CPO,0.207,17.35,11895,206378.25,239.4,2026-10-26
+Balanceado (ganancia/riesgo) · 7 emisoras,LAB B,0.214,12.75,16733,213345.75,247.48,2026-10-21
+Balanceado (ganancia/riesgo) · 7 emisoras,MU *,0.272,19524.99,13,253824.87,294.44,2026-12-23
+Balanceado (ganancia/riesgo) · 8 emisoras,SIGMAF A,0.03,18.25,1638,29893.5,34.68,2026-10-27
+Balanceado (ganancia/riesgo) · 8 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Balanceado (ganancia/riesgo) · 8 emisoras,GENTERA *,0.05,36.36,1371,49849.56,57.83,2026-10-21
+Balanceado (ganancia/riesgo) · 8 emisoras,BABA N,0.069,1921.64,35,67257.4,78.02,2026-11-24
+Balanceado (ganancia/riesgo) · 8 emisoras,GCC *,0.145,175.26,824,144414.24,167.52,2026-10-27
+Balanceado (ganancia/riesgo) · 8 emisoras,CEMEX CPO,0.2,17.35,11492,199386.2,231.29,2026-10-26
+Balanceado (ganancia/riesgo) · 8 emisoras,LAB B,0.209,12.75,16342,208360.5,241.7,2026-10-21
+Balanceado (ganancia/riesgo) · 8 emisoras,MU *,0.267,19524.99,13,253824.87,294.44,2026-12-23
+Balanceado (ganancia/riesgo) · 9 emisoras,GRUMA B,0.03,236.52,126,29801.52,34.57,2026-10-21
+Balanceado (ganancia/riesgo) · 9 emisoras,SIGMAF A,0.03,18.25,1638,29893.5,34.68,2026-10-27
+Balanceado (ganancia/riesgo) · 9 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Balanceado (ganancia/riesgo) · 9 emisoras,GENTERA *,0.047,36.36,1288,46831.68,54.32,2026-10-21
+Balanceado (ganancia/riesgo) · 9 emisoras,BABA N,0.067,1921.64,34,65335.76,75.79,2026-11-24
+Balanceado (ganancia/riesgo) · 9 emisoras,GCC *,0.14,175.26,796,139506.96,161.83,2026-10-27
+Balanceado (ganancia/riesgo) · 9 emisoras,CEMEX CPO,0.194,17.35,11148,193417.8,224.36,2026-10-26
+Balanceado (ganancia/riesgo) · 9 emisoras,LAB B,0.2,12.75,15639,199397.25,231.3,2026-10-21
+Balanceado (ganancia/riesgo) · 9 emisoras,MU *,0.262,19524.99,13,253824.87,294.44,2026-12-23
+Balanceado (ganancia/riesgo) · 10 emisoras,AC *,0.03,194.96,153,29828.88,34.6,2026-10-30
+Balanceado (ganancia/riesgo) · 10 emisoras,GRUMA B,0.03,236.52,126,29801.52,34.57,2026-10-21
+Balanceado (ganancia/riesgo) · 10 emisoras,SIGMAF A,0.03,18.25,1638,29893.5,34.68,2026-10-27
+Balanceado (ganancia/riesgo) · 10 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Balanceado (ganancia/riesgo) · 10 emisoras,GENTERA *,0.043,36.36,1179,42868.44,49.73,2026-10-21
+Balanceado (ganancia/riesgo) · 10 emisoras,BABA N,0.065,1921.64,33,63414.12,73.56,2026-11-24
+Balanceado (ganancia/riesgo) · 10 emisoras,GCC *,0.133,175.26,756,132496.56,153.7,2026-10-27
+Balanceado (ganancia/riesgo) · 10 emisoras,CEMEX CPO,0.184,17.35,10573,183441.55,212.79,2026-10-26
+Balanceado (ganancia/riesgo) · 10 emisoras,LAB B,0.194,12.75,15170,193417.5,224.36,2026-10-21
+Balanceado (ganancia/riesgo) · 10 emisoras,MU *,0.261,19524.99,13,253824.87,294.44,2026-12-23
+Balanceado (ganancia/riesgo) · 11 emisoras,ORBIA *,0.03,21.66,1380,29890.8,34.67,2026-10-27
+Balanceado (ganancia/riesgo) · 11 emisoras,AC *,0.03,194.96,153,29828.88,34.6,2026-10-30
+Balanceado (ganancia/riesgo) · 11 emisoras,GRUMA B,0.03,236.52,126,29801.52,34.57,2026-10-21
+Balanceado (ganancia/riesgo) · 11 emisoras,SIGMAF A,0.03,18.25,1638,29893.5,34.68,2026-10-27
+Balanceado (ganancia/riesgo) · 11 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Balanceado (ganancia/riesgo) · 11 emisoras,GENTERA *,0.039,36.36,1069,38868.84,45.09,2026-10-21
+Balanceado (ganancia/riesgo) · 11 emisoras,BABA N,0.062,1921.64,32,61492.48,71.33,2026-11-24
+Balanceado (ganancia/riesgo) · 11 emisoras,GCC *,0.124,175.26,705,123558.3,143.33,2026-10-27
+Balanceado (ganancia/riesgo) · 11 emisoras,CEMEX CPO,0.178,17.35,10228,177455.8,205.85,2026-10-26
+Balanceado (ganancia/riesgo) · 11 emisoras,LAB B,0.189,12.75,14779,188432.25,218.58,2026-10-21
+Balanceado (ganancia/riesgo) · 11 emisoras,MU *,0.258,19524.99,13,253824.87,294.44,2026-12-23
+Balanceado (ganancia/riesgo) · 12 emisoras,CHDRAUI B,0.03,86.62,345,29883.9,34.67,2026-10-20
+Balanceado (ganancia/riesgo) · 12 emisoras,ORBIA *,0.03,21.66,1380,29890.8,34.67,2026-10-27
+Balanceado (ganancia/riesgo) · 12 emisoras,AC *,0.03,194.96,153,29828.88,34.6,2026-10-30
+Balanceado (ganancia/riesgo) · 12 emisoras,GRUMA B,0.03,236.52,126,29801.52,34.57,2026-10-21
+Balanceado (ganancia/riesgo) · 12 emisoras,SIGMAF A,0.03,18.25,1638,29893.5,34.68,2026-10-27
+Balanceado (ganancia/riesgo) · 12 emisoras,GOOGL *,0.03,6359.99,4,25439.96,29.51,2026-10-28
+Balanceado (ganancia/riesgo) · 12 emisoras,GENTERA *,0.034,36.36,932,33887.52,39.31,2026-10-21
+Balanceado (ganancia/riesgo) · 12 emisoras,BABA N,0.06,1921.64,31,59570.84,69.1,2026-11-24
+Balanceado (ganancia/riesgo) · 12 emisoras,GCC *,0.114,175.26,648,113568.48,131.74,2026-10-27
+Balanceado (ganancia/riesgo) · 12 emisoras,CEMEX CPO,0.172,17.35,9883,171470.05,198.91,2026-10-26
+Balanceado (ganancia/riesgo) · 12 emisoras,LAB B,0.182,12.75,14231,181445.25,210.48,2026-10-21
+Balanceado (ganancia/riesgo) · 12 emisoras,MU *,0.258,19524.99,13,253824.87,294.44,2026-12-23
+Tu idea (NVDA + Banorte),NVDA *,0.3,4289.99,69,296009.31,343.37,2026-11-17
+Tu idea (NVDA + Banorte),GFNORTE O,0.2,189.55,1051,199217.05,231.09,2026-11-03
+Tu idea (NVDA + Banorte),GMEXICO B,0.2,231.6,860,199176.0,231.04,2026-10-20
+Tu idea (NVDA + Banorte),MSFT *,0.15,9661.05,15,144915.75,168.1,2026-10-28
+Tu idea (NVDA + Banorte),GOOGL *,0.15,6359.99,23,146279.77,169.68,2026-10-28
