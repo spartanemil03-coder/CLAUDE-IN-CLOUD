@@ -14,3 +14,15 @@ C Ranking (alto riesgo),TSLA *,0.2,6789.99,29,196909.71
 C Ranking (alto riesgo),AVGO *,0.15,6780.0,22,149160.0
 C Ranking (alto riesgo),GMEXICO B,0.15,231.6,645,149382.0
 C Ranking (alto riesgo),GFNORTE O,0.1,189.55,525,99513.75
+D Optimizado: ganancia/riesgo,OMA B,0.15,202.15,739,149388.85
+D Optimizado: ganancia/riesgo,GOOGL *,0.15,6359.99,23,146279.77
+D Optimizado: ganancia/riesgo,CEMEX CPO,0.15,17.35,8619,149539.65
+D Optimizado: ganancia/riesgo,GMEXICO B,0.15,231.6,645,149382.0
+D Optimizado: ganancia/riesgo,TSLA *,0.15,6789.99,22,149379.78
+D Optimizado: ganancia/riesgo,AVGO *,0.15,6780.0,22,149160.0
+D Optimizado: ganancia/riesgo,GFNORTE O,0.1,189.55,525,99513.75
+E Optimizado: ganancia máx.,GOOGL *,0.2,6359.99,31,197159.69
+E Optimizado: ganancia máx.,CEMEX CPO,0.2,17.35,11492,199386.2
+E Optimizado: ganancia máx.,GMEXICO B,0.2,231.6,860,199176.0
+E Optimizado: ganancia máx.,TSLA *,0.2,6789.99,29,196909.71
+E Optimizado: ganancia máx.,AVGO *,0.2,6780.0,29,196620.0

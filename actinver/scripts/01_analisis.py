@@ -1,11 +1,10 @@
-"""Reto Actinver 2026: cribado de las 145 acciones y comparación de portafolios candidatos.
+"""Reto Actinver 2026: lectura del Excel y cribado de las 145 acciones por costo de operar.
 
 Lee actinver/datos/Reto_Actinver_145_acciones.xlsx (hojas Acciones y Covarianza) y escribe en actinver/resultados/.
-Todo es descriptivo del pasado: no predice rendimientos. Las probabilidades suponen rendimiento esperado 0.
+Todo es descriptivo del pasado: no predice rendimientos. Los escenarios y portafolios están en 02_escenarios.py.
 """
 import warnings
 from pathlib import Path
-from statistics import NormalDist
 
 import numpy as np
 import openpyxl
@@ -53,51 +52,12 @@ def cribado(df):
     return d[cols].sort_values(["ejecucion", "vol_anual"])
 
 
-def evalua(nombre, pesos, df, cov):
-    assert len(pesos) >= 5 and max(pesos.values()) <= 0.5 + 1e-9, nombre
-    assert abs(sum(pesos.values()) - 1) < 1e-9, nombre
-    d = df.set_index("emisora")
-    w = pd.Series(pesos)
-    sig_anual = float(np.sqrt(w @ cov.loc[w.index, w.index] @ w))
-    sig = sig_anual * np.sqrt(SESIONES / 252)
-    costo = float(sum(CAPITAL * p * (d.loc[e, "spread"] + 2 * COMISION) for e, p in pesos.items()))
-    beta = float(sum(p * d.loc[e, "beta"] for e, p in pesos.items()))
-    # Ganancia neta ~ Normal(-costo, (sig*CAPITAL)^2); media de rendimiento 0.
-    prob = lambda x: 1 - NormalDist(-costo, sig * CAPITAL).cdf(x)
-    return {"portafolio": nombre, "emisoras": ", ".join(f"{e} {p:.0%}" for e, p in pesos.items()),
-            "vol_anual": sig_anual, "mov_1sigma_pct": sig, "mov_1sigma_mxn": sig * CAPITAL,
-            "costo_estimado_mxn": costo, "costo_pct": costo / CAPITAL, "beta_vs_IPC": beta,
-            "P_ganar_algo": prob(0), "P_ganar_100k": prob(100_000), "P_ganar_200k": prob(200_000),
-            "P_perder_100k": 1 - prob(-100_000)}
-
-
-def ordenes(nombre, pesos, df):
-    """Acciones enteras a comprar al precio de venta, dejando ~0.3% de efectivo para la comisión."""
-    d = df.set_index("emisora")
-    filas = []
-    for e, p in pesos.items():
-        titulos = int(p * CAPITAL * 0.997 // d.loc[e, "p_venta"])
-        filas.append({"portafolio": nombre, "emisora": e, "peso": p, "precio_venta": d.loc[e, "p_venta"],
-                      "titulos": titulos, "importe": round(titulos * d.loc[e, "p_venta"], 2)})
-    return filas
-
-
 def main():
-    df, cov = cargar()
+    df, _ = cargar()
     SALIDA.mkdir(exist_ok=True)
     c = cribado(df)
     c.round(5).to_csv(SALIDA / "cribado_145_acciones.csv", index=False)
-    p = pd.DataFrame([evalua(n, w, df, cov) for n, w in PORTAFOLIOS.items()])
-    p.round(4).to_csv(SALIDA / "portafolios_candidatos.csv", index=False)
-    o = pd.DataFrame([f for n, w in PORTAFOLIOS.items() for f in ordenes(n, w, df)])
-    o.to_csv(SALIDA / "ordenes_sugeridas.csv", index=False)
-    pd.set_option("display.width", 250, "display.max_columns", 30)
     print(c.ejecucion.value_counts().to_string())
-    print(p.drop(columns="emisoras").round(3).to_string(index=False))
-    sel = ["NVDA *", "GFNORTE O"]
-    print(o.to_string(index=False))
-    print("\nCorrelación NVDA vs GFNORTE:",
-          round(cov.loc[sel[0], sel[1]] / np.sqrt(cov.loc[sel[0], sel[0]] * cov.loc[sel[1], sel[1]]), 2))
 
 
 if __name__ == "__main__":

@@ -1,53 +1,57 @@
 # Propuesta de portafolio: Reto Actinver 2026
 
-Datos: Excel del 2026-10-08 (precios, spreads, volatilidades y covarianzas de los últimos 12 meses). Hipotético y descriptivo del pasado. Nadie sabe qué va a pasar en 25 sesiones.
+Datos: Excel del 2026-10-08. Hipotético y descriptivo del pasado. Nadie sabe qué va a pasar en 25 sesiones; el modelo no tiene un pronóstico por acción, solo escenarios de mercado.
 
-## Lo que decide el resultado
+## Ganador: portafolio E
 
-1. **Se gana por pesos, no por porcentaje.** El efectivo no rinde, así que conviene invertir casi todo (dejando ~0.3% para la comisión).
-2. **Operar cuesta poco si eliges bien.** La comisión es 0.116% por lado. Lo que sí pega es el spread compra-venta: de las 145 emisoras, 53 tienen spread de 0.6% o menos, y **62 lo tienen mayor a 2%** (casi todas del exterior). Con una de esas pierdes más en el viaje que lo que suele moverse en una semana.
-3. **El spread del Excel es del mejor nivel del libro.** Si metes $300,000 en una emisora de poco volumen, puedes pasar por varios precios. Revisa el volumen en la plataforma antes de operar.
-4. **Solo hay 3 premios por rendimiento y 48 por avance** (quizzes y Tracks). Los de avance dependen de ti, no del mercado.
+Cinco acciones al 20% cada una, $1,000,000 en total:
 
-## NVIDIA y Banorte
+| Emisora | Peso | Títulos (al precio de venta del Excel) | Importe |
+|---|---|---|---|
+| GOOGL * | 20% | 31 | $197,160 |
+| CEMEX CPO | 20% | 11,492 | $199,386 |
+| GMEXICO B | 20% | 860 | $199,176 |
+| TSLA * | 20% | 29 | $196,909 |
+| AVGO * | 20% | 29 | $196,620 |
 
-| | NVDA * | GFNORTE O |
-|---|---|---|
-| Spread | 0.44% | 0.03% |
-| Costo ida y vuelta (spread + 2 comisiones) | 0.68% | 0.26% |
-| Volatilidad anual | 38% | 26% |
-| Mov. típico ±1σ en 25 sesiones | ±12.1% | ±8.2% |
-| Peor caída en 1 año | -22% | -12% |
-| Rend. 6 meses | +32% | +1% |
-| Beta vs IPC | 0.48 | 1.11 |
+Deja ~$11,000 en efectivo para comisiones. Ya viene cargado en la hoja `Mi portafolio` del Excel mejorado (`resultados/Reto_Actinver_mejorado.xlsx`).
 
-- Las dos se mueven poco juntas (correlación 0.13), así que sí diversifican entre sí.
-- NVDA es líquida (más de $13 millones en el mejor nivel) y barata de operar para ser del exterior. Su reporte del 3T fiscal se espera el 18 de noviembre (estimado de calendarios de terceros, no confirmado), o sea después del 13.
-- Banorte es la apuesta mexicana de mercado (beta 1.1) y tiene mucha liquidez. Su 3T26 no tiene fecha confirmada que encontrara; el año pasado reportó el 4 de noviembre, así que probablemente cae dentro del reto y puede mover el precio.
-- Que NVDA haya subido más en 6 meses no dice que vaya a seguir subiendo.
+## Cómo se obtuvo
 
-## Tres portafolios (pesos sobre $1,000,000)
+1. **Mercado**: canasta de las 144 acciones con historial, mismo peso. Se mueve ±4.9% (1σ) en 25 sesiones. Cada acción tiene una beta contra esa canasta (sale de la hoja Covarianza).
+2. **Tres escenarios** para la canasta: bajista -4.9% (25%), base +1.0% (50%), alcista +4.9% (25%). Se pueden cambiar en la hoja `Pronóstico`.
+3. **Ganancia** = $1,000,000 × (beta del portafolio × rendimiento de la canasta) − costo de operar. El costo es la diferencia compra-venta completa más 2 comisiones.
+4. **Optimización** sobre 93 emisoras operables con al menos $40,000 en el mejor nivel del libro: un optimizador buscó la mezcla con topes por emisora y hasta 12 emisoras (las filas de `Mi portafolio`). D busca la mejor ganancia por riesgo con tope de 15% por emisora; E busca la mayor ganancia con tope de 20% y riesgo anual hasta 30%. Se compararon contra tus ideas iniciales (A, B y C).
 
-| Portafolio | Composición | Vol. anual | ±1σ en pesos (25 ses.) | Costo estimado | P(ganar >$100k) |
-|---|---|---|---|---|---|
-| A Prudente | GFNORTE 20, GMEXICO B 20, AC 20, FUNO 20, MSFT 20 | 17.7% | ±$55,800 | $2,900 | 3% |
-| **B Tu idea + diversificadores** | **NVDA 30, GFNORTE 20, GMEXICO B 20, MSFT 15, GOOGL 15** | **21.4%** | **±$67,400** | **$4,200** | **6%** |
-| C Ranking (alto riesgo) | NVDA 40, TSLA 20, AVGO 15, GMEXICO B 15, GFNORTE 10 | 29.1% | ±$91,600 | $5,100 | 13% |
+## Resultados (pesos, ya con costos)
 
-Las probabilidades suponen rendimiento esperado 0 y distribución normal; son para comparar riesgo entre portafolios, no para pronosticar. Los tres cumplen: mínimo 5 emisoras, máximo 50% en una, sin cortos, solo acciones.
+| Portafolio | Emisoras | Beta | Bajista | Base | Alcista | Esperada | Vol. anual | Peor 5% |
+|---|---|---|---|---|---|---|---|---|
+| A Prudente | 5 | 0.66 | -$35,600 | +$3,700 | +$29,800 | +$400 | 17.7% | -$90,900 |
+| B Tu idea (NVDA + Banorte + ...) | 5 | 0.98 | -$52,800 | +$5,600 | +$44,400 | +$700 | 21.4% | -$109,900 |
+| C Ranking (NVDA 40%, TSLA, AVGO...) | 5 | 1.25 | -$67,100 | +$7,400 | +$56,900 | +$1,200 | 29.1% | -$150,200 |
+| D Optimizado, 7 emisoras | 7 | 1.14 | -$59,800 | +$7,900 | +$52,800 | +$2,200 | 23.3% | -$118,500 |
+| **E Optimizado, ganancia máx.** | 5 | 1.29 | -$67,800 | +$9,100 | +$60,200 | **+$2,700** | 27.0% | -$137,200 |
 
-**Mi sugerencia: B**, porque incluye tus dos ideas con una mezcla que no depende de una sola.
+- **Ganador de ganancia esperada y de ganancia por riesgo: E.** También gana en el escenario base y en el alcista. En el bajista gana A, que pierde la mitad.
+- **D casi empata** (ganancia por riesgo 0.030 contra 0.032) con 7 emisoras y menos riesgo (23% contra 27%). Si prefieres más acciones y menos susto, D es la alternativa: OMA, GOOGL, CEMEX, GMEXICO, TSLA, AVGO al 15% y GFNORTE al 10%.
+- Más acciones sí bajan el riesgo (D con 7 tiene 23% de volatilidad contra 27% de E con casi el mismo rendimiento esperado). El número de emisoras lo fijan los topes que puse: 15% da al menos 7 y 20% da al menos 5. No probé topes más bajos.
 
-- Si lo único que te importa es quedar en el top 3 y no te duele quedar abajo, C tiene más probabilidad de un resultado grande, pero también de uno malo (P de perder más de $100k: 15% contra 8% en B).
-- A casi no tiene chance de llegar al top, pero protege.
-- En ningún caso necesitas más de 5 o 6 emisoras: más no baja mucho el riesgo y sube el costo.
+## Lo que el modelo sí y no dice
 
-Órdenes en títulos enteros: `resultados/ordenes_sugeridas.csv`.
+- **No dice que E vaya a ganar $2,700.** La ganancia esperada es pequeña frente al riesgo: la desviación es de unos $85,000 y la probabilidad de terminar en positivo es de 51%. El resultado lo decide cómo se mueva el mercado.
+- **E es una apuesta de beta alta**: más mercado por cada peso. Gana si el mercado sube, pierde más si baja. Es el efecto de no poder apalancarse y querer el máximo dinero con $1,000,000.
+- **El optimizador dejó fuera NVIDIA**: su beta es 1.12, pero cuesta 0.68% ida y vuelta y se mueve mucho por razones propias. Banorte queda solo en D (10%). Si quieres una de las dos por convicción, B las incluye.
+- **D y E se optimizaron con los mismos datos del último año**, así que su ventaja sobre A, B y C es optimista.
+- **Liquidez**: GOOGL, CEMEX y AVGO muestran unos $42,000 a $47,000 en el mejor nivel del libro y E pide $200,000 en cada una. Revisa la profundidad en la plataforma antes de operar.
+
+## La plataforma
+
+La captura del monitor muestra pestañas de Acciones, ETFs y Fondos, con poder de compra de $1,000,000 y $0 invertidos. Seguimos solo con acciones, como decidiste. No analicé ETFs ni fondos: el Excel no trae sus datos.
 
 ## Antes de operar
 
-1. **Confirma en la plataforma** que solo acciones están permitidas (yo no encontré las bases oficiales públicas; si el resumen dice ETFs y fondos, tú ya decidiste usar solo acciones y ninguna de las 145 del monitor parece ETF).
-2. **Confirma cómo se valúa al 13 de noviembre.** Si es a precio de mercado sin vender, no pagas el spread de salida y el costo real es menor al estimado (que supone ida y vuelta completa).
-3. **Revisa el horario:** 7:30 a 14:00 (8:30 a 15:00 desde el 3 de noviembre). Las órdenes asignadas no se cancelan.
-4. **Vuelve a ver precios y volumen del día.** El Excel es una foto del 8 de octubre y el reto empezó el 5, así que ya pasaron 3 sesiones.
-5. **Fechas de resultados:** Banorte (ver arriba) y, en B, Microsoft y Alphabet, que suelen reportar a finales de octubre. Confírmalo en su calendario: el Excel no trae fechas de reportes.
+1. Revisa cómo se valúa al 13 de noviembre. Si es a precio de mercado sin vender, no pagas el spread de salida y el costo real es menor.
+2. Horario: 7:30 a 14:00 (8:30 a 15:00 desde el 3 de noviembre). Las órdenes asignadas no se cancelan.
+3. Vuelve a ver precios y volumen del día: el Excel es del 8 de octubre y el reto empezó el 5.
+4. Fechas de resultados trimestrales de Alphabet, Tesla y las demás: suelen caer a finales de octubre y mueven mucho el precio. El Excel no las trae.

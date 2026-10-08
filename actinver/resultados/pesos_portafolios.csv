@@ -1,0 +1,28 @@
+portafolio,emisora,peso
+A Prudente,GFNORTE O,0.2
+A Prudente,GMEXICO B,0.2
+A Prudente,AC *,0.2
+A Prudente,FUNO 11,0.2
+A Prudente,MSFT *,0.2
+B Tu idea + diversificadores,NVDA *,0.3
+B Tu idea + diversificadores,GFNORTE O,0.2
+B Tu idea + diversificadores,GMEXICO B,0.2
+B Tu idea + diversificadores,MSFT *,0.15
+B Tu idea + diversificadores,GOOGL *,0.15
+C Ranking (alto riesgo),NVDA *,0.4
+C Ranking (alto riesgo),TSLA *,0.2
+C Ranking (alto riesgo),AVGO *,0.15
+C Ranking (alto riesgo),GMEXICO B,0.15
+C Ranking (alto riesgo),GFNORTE O,0.1
+D Optimizado: ganancia/riesgo,OMA B,0.15
+D Optimizado: ganancia/riesgo,GOOGL *,0.15
+D Optimizado: ganancia/riesgo,CEMEX CPO,0.15
+D Optimizado: ganancia/riesgo,GMEXICO B,0.15
+D Optimizado: ganancia/riesgo,TSLA *,0.15
+D Optimizado: ganancia/riesgo,AVGO *,0.15
+D Optimizado: ganancia/riesgo,GFNORTE O,0.1
+E Optimizado: ganancia máx.,GOOGL *,0.2
+E Optimizado: ganancia máx.,CEMEX CPO,0.2
+E Optimizado: ganancia máx.,GMEXICO B,0.2
+E Optimizado: ganancia máx.,TSLA *,0.2
+E Optimizado: ganancia máx.,AVGO *,0.2
