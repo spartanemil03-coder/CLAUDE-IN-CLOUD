@@ -19,7 +19,7 @@ def numero(v):
     return v if isinstance(v, (int, float)) else int(str(v).replace(",", ""))
 
 
-ws = openpyxl.load_workbook(ORIGEN, data_only=True).active
+ws = openpyxl.load_workbook(ORIGEN, data_only=True)["Fuentes de datos"]
 pob, dfn = [], []
 for fila in ws.iter_rows(values_only=True):
     a, b, c, d, e, f, g, h = (list(fila) + [None] * 8)[1:9]     # columnas B..I
