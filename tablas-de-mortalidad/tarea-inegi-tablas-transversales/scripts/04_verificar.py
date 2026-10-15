@@ -14,7 +14,7 @@ import calculo_abreviada as ca  # noqa: E402
 RAIZ = Path(__file__).resolve().parent.parent
 LIBRO = Path(sys.argv[1]) if len(sys.argv) > 1 else RAIZ / "resultados" / "Fuentes_de_consulta.xlsx"
 wb = load_workbook(LIBRO, data_only=True)
-COLS = {"P": "E", "D": "F", "nMx": "G", "nqx": "I", "lx": "K", "ndx": "L", "nLx": "M", "Tx": "N", "ex": "O"}
+COLS = {"P": "E", "D": "F", "nMx": "G", "nqx": "H", "lx": "J", "ndx": "K", "nAx": "L", "nLx": "M", "Tx": "N", "ex": "O"}
 peor = 0.0
 for s, hoja in (("H", "Tabla hombres"), ("M", "Tabla mujeres"), ("A", "Tabla ambos sexos")):
     ref = ca.tabla(s)

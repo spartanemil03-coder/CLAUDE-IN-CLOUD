@@ -237,14 +237,6 @@ COL_INS = {"H": ("C", "D"), "M": ("E", "F"), "A": ("G", "H")}
 CF = "'Cohorte ficticio'!"
 
 
-def a_cd(s, k, g):
-    if k == 0:
-        h, m = f"IF({g}>=0.107,0.33,0.045+2.684*{g})", f"IF({g}>=0.107,0.35,0.053+2.8*{g})"
-    else:
-        h, m = f"IF({g}>=0.107,1.352,1.651-2.816*{g})", f"IF({g}>=0.107,1.361,1.522-1.518*{g})"
-    return {"H": f"={h}", "M": f"={m}", "A": f"=({h}+{m})/2"}[s]
-
-
 for s in "HMA":
     ws = th[s]
     ws.sheet_view.showGridLines = False
@@ -255,10 +247,9 @@ for s in "HMA":
     banda(ws, 3, "México 2025. Cohorte ficticia de 100,000 nacimientos con las tasas de mortalidad por edad observadas (INEGI: EIC 2025 y defunciones registradas)", 2, 15, f_sub, 18)
     pon(ws, "B5", "Radix l0", f_b, caja=False)
     pon(ws, "D5", f"={CF}D5", f_n, "#,##0", VERDE_CLA)
-    nota(ws, 6, "nMx = D/P;  nqx = n·nMx / (1 + (n − nax)·nMx);  lx+n = lx·(1 − nqx);  ndx = lx − lx+n;  nLx = n·lx+n + nax·ndx;  Tx = suma de nLx hacia abajo;  ex = Tx/lx.  "
-         "Grupo abierto 75+: q = 1 y L = l/M.", 2, 15)
-    nota(ws, 7, "nax: para 0 y 1-4, Coale-Demeny según la mortalidad infantil y el sexo (en ambos sexos, el promedio de hombres y mujeres); n/2 en los demás grupos. Valores sin redondear.", 2, 15)
-    encabezado(ws, T0 - 1, 2, ["Edad", "x", "n", "P (población)", "D (defunciones)", "nMx", "nax", "nqx", "npx", "lx", "ndx", "nLx", "Tx", "ex"])
+    nota(ws, 6, "nmx = D/P;  nqx = (2·n·nmx) / (2 + n·nmx);  npx = 1 − nqx;  lx+n = lx·npx;  ndx = lx·nqx;  nLx = lx+n·n + ndx·nAx;  Tx = suma de nLx hacia abajo;  ex = Tx/lx.", 2, 15)
+    nota(ws, 7, "nAx: 0.12 en la edad 0, 1.5 en 1-4 y 2.5 en los demás grupos (los valores del Cuadro 4.3 del ejemplo de la profesora). En el grupo abierto 75+: nqx = 1 y nAx = 1/nmx.", 2, 15)
+    encabezado(ws, T0 - 1, 2, ["Edad", "x", "n", "P (población)", "D (defunciones)", "nmx", "nqx", "npx", "lx", "ndx", "nAx", "nLx", "Tx", "ex"])
     for k, et in enumerate(ETIQ):
         f = T0 + k
         fi = I0 + k
@@ -269,28 +260,23 @@ for s in "HMA":
         pon(ws, f"D{f}", "abierto" if ab else (1 if k == 0 else 4 if k == 1 else 5), f_n, "0", fl, der)
         pon(ws, f"E{f}", f"={CF}{pc}{fi}", f_n, "#,##0", fl)
         pon(ws, f"F{f}", f"={CF}{dc}{fi}", f_n, "#,##0", fl)
-        pon(ws, f"G{f}", f"=F{f}/E{f}", f_n, "0.00000", fl)
-        if k < 2:
-            pon(ws, f"H{f}", a_cd(s, k, f"$G${T0}"), f_n, "0.0000", fl)
-        elif not ab:
-            pon(ws, f"H{f}", f"=D{f}/2", f_n, "0.0000", fl)
-        else:
-            pon(ws, f"H{f}", "-", f_n, fill=fl, alin=der)
-        pon(ws, f"I{f}", 1 if ab else f"=D{f}*G{f}/(1+(D{f}-H{f})*G{f})", f_n, "0.00000", fl)
-        pon(ws, f"J{f}", f"=1-I{f}", f_n, "0.00000", fl)
-        pon(ws, f"K{f}", "=$D$5" if k == 0 else f"=K{f - 1}-L{f - 1}", f_n, "#,##0", fl)
-        pon(ws, f"L{f}", f"=K{f}*I{f}", f_n, "#,##0", fl)
-        pon(ws, f"M{f}", f"=K{f}/G{f}" if ab else f"=D{f}*K{f + 1}+H{f}*L{f}", f_n, "#,##0", fl)
-        pon(ws, f"N{f}", f"=SUM(M{f}:$M${T1})", f_n, "#,##0", fl)
-        pon(ws, f"O{f}", f"=N{f}/K{f}", f_b, "0.00", fl)
+        pon(ws, f"G{f}", f"=F{f}/E{f}", f_n, "0.00000", fl)                                   # nmx
+        pon(ws, f"H{f}", 1 if ab else f"=(2*D{f}*G{f})/(2+D{f}*G{f})", f_n, "0.00000", fl)  # nqx
+        pon(ws, f"I{f}", f"=1-H{f}", f_n, "0.00000", fl)                                      # npx
+        pon(ws, f"J{f}", "=$D$5" if k == 0 else f"=J{f - 1}*I{f - 1}", f_n, "#,##0", fl)      # lx
+        pon(ws, f"K{f}", f"=J{f}*H{f}", f_n, "#,##0", fl)                                     # ndx
+        pon(ws, f"L{f}", f"=1/G{f}" if ab else [0.12, 1.5][k] if k < 2 else 2.5, f_n, "0.00", fl)   # nAx
+        pon(ws, f"M{f}", f"=K{f}*L{f}" if ab else f"=J{f + 1}*D{f}+K{f}*L{f}", f_n, "#,##0", fl)    # nLx
+        pon(ws, f"N{f}", f"=SUM(M{f}:$M${T1})", f_n, "#,##0", fl)                              # Tx
+        pon(ws, f"O{f}", f"=N{f}/J{f}", f_b, "0.00", fl)                                       # ex
     pon(ws, f"B{T1 + 2}", "Control: suma de ndx − l0", f_n, fill=VERDE_CLA, caja=False)
     ws.merge_cells(f"B{T1 + 2}:D{T1 + 2}")
-    pon(ws, f"E{T1 + 2}", f"=ROUND(SUM(L{T0}:L{T1})-D5,6)", f_b, "0.0", VERDE_CLA)
+    pon(ws, f"E{T1 + 2}", f"=ROUND(SUM(K{T0}:K{T1})-D5,6)", f_b, "0.0", VERDE_CLA)
     nota(ws, T1 + 2, "← debe ser 0", 6, 8)
-    pon(ws, f"B{T1 + 3}", "q0 (mortalidad infantil, por mil)", f_n, fill=VERDE_CLA, caja=False)
+    pon(ws, f"B{T1 + 3}", "q0 (por mil)", f_n, fill=VERDE_CLA, caja=False)
     ws.merge_cells(f"B{T1 + 3}:D{T1 + 3}")
-    pon(ws, f"E{T1 + 3}", f"=I{T0}*1000", f_b, "0.00", VERDE_CLA)
-    anchos(ws, {"A": 3, "B": 8, "C": 6, "D": 9, "E": 15, "F": 15, "G": 10, "H": 9, "I": 10, "J": 10, "K": 11, "L": 11, "M": 12, "N": 13, "O": 9, "P": 3})
+    pon(ws, f"E{T1 + 3}", f"=H{T0}*1000", f_b, "0.00", VERDE_CLA)
+    anchos(ws, {"A": 3, "B": 8, "C": 6, "D": 9, "E": 15, "F": 15, "G": 10, "H": 10, "I": 10, "J": 11, "K": 11, "L": 8, "M": 12, "N": 13, "O": 9, "P": 3})
     ws.freeze_panes = f"C{T0}"
 
 # =====================================================================
@@ -309,10 +295,10 @@ ind = [
     ("Esperanza de vida a los 5 años, e5", lambda h: f"'{h}'!O{T0 + 2}", "0.00"),
     ("Esperanza de vida a los 65 años, e65", lambda h: f"'{h}'!O{T0 + 13}", "0.00"),
     ("Esperanza de vida a los 75 años, e75", lambda h: f"'{h}'!O{T1}", "0.00"),
-    ("Mortalidad infantil, q0 por mil", lambda h: f"'{h}'!I{T0}*1000", "0.00"),
-    ("Mortalidad de menores de 5 años, 5q0 por mil", lambda h: f"(1-'{h}'!J{T0}*'{h}'!J{T0 + 1})*1000", "0.00"),
-    ("Sobrevivientes a los 65 años (de 100,000), l65", lambda h: f"'{h}'!K{T0 + 13}", "#,##0"),
-    ("Sobrevivientes a los 75 años (de 100,000), l75", lambda h: f"'{h}'!K{T1}", "#,##0"),
+    ("Mortalidad infantil, q0 por mil", lambda h: f"'{h}'!H{T0}*1000", "0.00"),
+    ("Mortalidad de menores de 5 años, 5q0 por mil", lambda h: f"(1-'{h}'!I{T0}*'{h}'!I{T0 + 1})*1000", "0.00"),
+    ("Sobrevivientes a los 65 años (de 100,000), l65", lambda h: f"'{h}'!J{T0 + 13}", "#,##0"),
+    ("Sobrevivientes a los 75 años (de 100,000), l75", lambda h: f"'{h}'!J{T1}", "#,##0"),
 ]
 for j, (t, fn, fmt) in enumerate(ind):
     f = 7 + j
@@ -362,9 +348,9 @@ def grafico(titulo, col, ytit, ancla, hasta, log=False, ymin=None):
     ws.add_chart(ch, ancla)
 
 
-grafico("Sobrevivientes lx de la cohorte ficticia (eje desde 50,000)", 11, "lx", "G5", T1, ymin=50000)
+grafico("Sobrevivientes lx de la cohorte ficticia (eje desde 50,000)", 10, "lx", "G5", T1, ymin=50000)
 grafico("Esperanza de vida ex por edad", 15, "ex (años)", "G21", T1)
-grafico("Probabilidad de morir nqx (escala log, sin 75+)", 9, "nqx", "G37", T1 - 1, log=True)
+grafico("Probabilidad de morir nqx (escala log, sin 75+)", 8, "nqx", "G37", T1 - 1, log=True)
 
 N0 = R + 5
 banda(ws, N0, "Método, supuestos y alertas", 2, 5)
@@ -373,7 +359,7 @@ notas = [
     "2. Grupos 0, 1-4, 5-9, ..., 70-74 y 75+ (abierto): el máximo detalle que permite la población de la EIC (llega a 75 años y más).",
     "3. Las defunciones de sexo no especificado (529) y de edad no especificada (4,016) se reparten en proporción (hoja 'Cohorte ficticio', bloque A).",
     "4. La EIC junta 0-4 años: el año 0 se separa suponiendo cohortes de nacimiento con crecimiento constante (bloque B). Es un supuesto y afecta sobre todo a q0.",
-    "5. nqx = n·nMx / (1 + (n − nax)·nMx), con nax = n/2 salvo 0 y 1-4 (Coale-Demeny). En 75+ se usa e75 = 1/M, muy sensible a las defunciones de adultos mayores.",
+    "5. nqx = (2·n·nmx) / (2 + n·nmx) y nAx = 0.12, 1.5 y 2.5, como en el ejemplo de la profesora (Cuadro 4.3). En 75+ se usa nAx = 1/nmx, muy sensible a las defunciones de adultos mayores.",
     "6. ALERTA: la e0 sale 4 a 5 años por encima de la de CONAPO. En la captura de INEGI de la hoja 'Fuentes de datos' se lee que las cifras de 2025 son "
     "preliminares y aún no concluyen los procesos de generación (son defunciones por año de registro). Las 762,494 defunciones del archivo quedan por debajo de las "
     "836,585 que proyecta CONAPO para 2025, y las 12,207 defunciones infantiles son pocas para ~2.0 millones de nacimientos. Con datos definitivos la e0 bajaría.",

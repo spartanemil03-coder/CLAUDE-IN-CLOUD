@@ -10,7 +10,7 @@ Instrucción de la tarea: *utilizar las fuentes de consulta de INEGI para hacer 
 |---|---|
 | `Fuentes de datos` | La de la profesora, igual (población EIC 2025 en `C37:H52`, defunciones de INEGI en `B106:F127`) |
 | `Cohorte ficticio` | Radix de 100,000, reparto de sexo y edad no especificados, separación del año 0 y agrupación en 17 grupos |
-| `Tabla hombres`, `Tabla mujeres`, `Tabla ambos sexos` | Las tablas transversales abreviadas (nMx, nax, nqx, npx, lx, ndx, nLx, Tx, ex) |
+| `Tabla hombres`, `Tabla mujeres`, `Tabla ambos sexos` | Las tablas transversales abreviadas (nmx, nqx, npx, lx, ndx, nAx, nLx, Tx, ex) |
 | `Gráficos y resumen` | Indicadores, tres gráficos de Excel (lx, ex, nqx), comparación con CONAPO y notas |
 
 Todo son fórmulas que leen la hoja de la profesora; si cambia un dato de `Fuentes de datos`, las tablas se recalculan.
@@ -21,7 +21,7 @@ Otros archivos: `fuentes/Fuentes_de_consulta.xlsx` (el original que dio la profe
 
 Cohorte ficticia de 100,000 nacimientos (l0, `Cohorte ficticio!D5`) que vive toda su vida con las tasas de mortalidad por edad de 2025. Grupos: 0, 1-4, 5-9, ..., 70-74 y 75+ (abierto), lo máximo que permite la población de la EIC.
 
-Por grupo: `nMx = D/P`, `nqx = n·nMx / (1 + (n − nax)·nMx)`, `lx+n = lx·(1 − nqx)`, `ndx = lx − lx+n`, `nLx = n·lx+n + nax·ndx`, `Tx = Σ nLx`, `ex = Tx/lx`. Con `nax = n/2` salvo 0 y 1-4 (Coale-Demeny) y, en 75+, `q = 1` y `L = l/M`.
+Mismas fórmulas y columnas del ejemplo de la profesora (`TC_TablaTransversal_edit.xlsx`, Cuadro 4.3): `nmx = D/P`, `nqx = (2·n·nmx)/(2 + n·nmx)`, `npx = 1 − nqx`, `lx+n = lx·npx`, `ndx = lx·nqx`, `nAx = 0.12` (edad 0), `1.5` (1-4) y `2.5` (resto), `nLx = lx+n·n + ndx·nAx`, `Tx = Σ nLx`, `ex = Tx/lx`. En 75+ (abierto): `nqx = 1` y `nAx = 1/nmx`. No se hizo la columna `nZx`.
 
 ## Resultados
 
@@ -29,7 +29,7 @@ Por grupo: `nMx = D/P`, `nqx = n·nMx / (1 + (n − nax)·nMx)`, `lx+n = lx·(1 
 |---|---|---|---|
 | e0 (años) | 76.64 | 83.92 | 80.31 |
 | e65 | 24.81 | 28.24 | 26.59 |
-| q0 por mil | 9.93 | 7.82 | 8.89 |
+| q0 por mil | 9.97 | 7.85 | 8.92 |
 | e0 CONAPO 2025 (referencia) | 72.57 | 79.04 | 75.67 |
 
 ## Supuestos y límites
