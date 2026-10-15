@@ -6,7 +6,7 @@ Trabajos de actuaría y finanzas hechos con Claude Code. Cada tema vive en su pr
 
 | Tema | Carpeta | Qué se hizo | Fechas |
 |---|---|---|---|
-| Tablas de mortalidad | [`tablas-de-mortalidad/`](tablas-de-mortalidad/) | Tres tablas de mortalidad de México con fórmulas vivas en Excel, gráficos e informes en Word | 6 al 8 oct 2026 |
+| Tablas de mortalidad | [`tablas-de-mortalidad/`](tablas-de-mortalidad/) | Cuatro trabajos de mortalidad de México con fórmulas vivas en Excel, gráficos e informes en Word | 6 al 15 oct 2026 |
 | Modelo de Markowitz | [`modelo-markowitz/`](modelo-markowitz/) | Portafolio de media-varianza con 8 acciones mexicanas, frontera eficiente y Sharpe en la plantilla del profesor | 7 oct 2026 |
 | Reto Actinver 2026 | [`reto-actinver-2026/`](reto-actinver-2026/) | Análisis de las 145 acciones del simulador, pronóstico, elección del portafolio y operación en la plataforma | 8 oct 2026 |
 
@@ -15,6 +15,7 @@ Trabajos de actuaría y finanzas hechos con Claude Code. Cada tema vive en su pr
 - **Generaciones 1950 a 2000 (ONU WPP 2024):** tablas de vida (qx, lx, dx, Lx, Tx, ex) por generación y sexo, comparación entre generaciones y validación contra la e0 de la ONU. [Ver carpeta](tablas-de-mortalidad/generaciones-onu-wpp2024/).
 - **Tarea CONAPO, generación 1970:** tabla en la plantilla de la profesora con las bases de CONAPO, análisis en Word. Esperanza de vida al nacer de la generación: 70.9 años. [Ver carpeta](tablas-de-mortalidad/tarea-conapo-generacion-1970/).
 - **Tarea INEGI 2019:** tabla de México 2019 con defunciones y nacimientos registrados y el Censo 2020, libro de preparación de datos, explicación paso a paso y versión en R. Esperanza de vida al nacer en 2019: 76.0 años (ambos sexos). [Ver carpeta](tablas-de-mortalidad/tarea-inegi-2019/).
+- **Tarea U2TC, tablas transversales abreviadas (INEGI 2025):** cohorte ficticia de 100,000 con la EIC 2025 y las defunciones de INEGI, tablas para hombres, mujeres y ambos sexos con fórmulas vivas. e0 con estos datos: 80.3 años (ambos sexos), más alta que la de CONAPO (75.7), por los datos de entrada. [Ver carpeta](tablas-de-mortalidad/tarea-inegi-tablas-transversales/).
 
 ### Modelo de Markowitz
 
@@ -35,7 +36,8 @@ Precios de AC, ALSEA, AMXB, BIMBOA, CEMEXCPO, GFNORTEO, TLEVISACPO y WALMEX (oct
 ├── tablas-de-mortalidad/
 │   ├── generaciones-onu-wpp2024/
 │   ├── tarea-conapo-generacion-1970/
-│   └── tarea-inegi-2019/
+│   ├── tarea-inegi-2019/
+│   └── tarea-inegi-tablas-transversales/
 ├── modelo-markowitz/
 └── reto-actinver-2026/
 ```
